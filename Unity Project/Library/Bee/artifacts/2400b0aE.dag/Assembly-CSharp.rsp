@@ -354,6 +354,8 @@
 "Assets/Scripts/Animation/LandingAndMovingState.cs"
 "Assets/Scripts/Animation/LandingState.cs"
 "Assets/Scripts/Animation/TakingOffState.cs"
+"Assets/Scripts/DroneController.cs"
+"Assets/Scripts/GameManager.cs"
 -langversion:9.0
 
 /deterministic

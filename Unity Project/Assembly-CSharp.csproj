@@ -40,6 +40,8 @@
      <Compile Include="Assets/Scripts/Animation/FlyingAndMovingState.cs" />
      <Compile Include="Assets/Scripts/Animation/LandingAndMovingState.cs" />
      <Compile Include="Assets/Scripts/Animation/TakingOffState.cs" />
+     <Compile Include="Assets/Scripts/DroneController.cs" />
+     <Compile Include="Assets/Scripts/GameManager.cs" />
      <None Include="Assets/Meshes/Quad Drone/QuadDrone License.txt" />
      <None Include="Assets/LICENSE.txt" />
     <Reference Include="UnityEngine">
