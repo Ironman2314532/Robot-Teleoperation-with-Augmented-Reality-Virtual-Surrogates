@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.InputSystem;
+using UnityEngine;//For Base Unity
+using UnityEngine.UI;//For Canvas Editing
+using UnityEngine.InputSystem;//For Controller Inputs
+using TMPro; //For Text Editing
 
 public class GameManager : MonoBehaviour
 {
@@ -10,7 +11,9 @@ public class GameManager : MonoBehaviour
     ControllerInput controls;
     public Button _FlyButton;
     public Button _LandButton;
+    public TextMeshProUGUI _ModeSelector;
     bool _drone_power_state = false;
+    bool _virtual_surrogate_control_mode = true;
     Vector2 translate_drone;
 
     void EventOnClickFlyButton()
@@ -42,6 +45,25 @@ public class GameManager : MonoBehaviour
             EventOnClickLandButton();
     }
 
+    void save_way_point() { }
+    void delete_way_point() { }
+    void scroll_way_point() { }
+    void change_mode()
+    {
+        _virtual_surrogate_control_mode = !_virtual_surrogate_control_mode;
+        if (_virtual_surrogate_control_mode)
+        {
+            _ModeSelector.text = "Virtual Surrogate Control Mode";
+            _ModeSelector.color = new Color32(0, 135, 62, 255);
+        }
+        else
+        {
+            _ModeSelector.text = "Real Time Control Mode";
+            _ModeSelector.color = new Color32(128, 0, 0, 255);
+        }
+
+    }
+
 
     void Awake()
     {
@@ -49,18 +71,27 @@ public class GameManager : MonoBehaviour
         controls.Power.DronePowerSwitch.performed += ctx => power_switch_pressed();
         controls.Translate.Move.performed += ctx => translate_drone = ctx.ReadValue<Vector2>();
         controls.Translate.Move.canceled += CollectionExtensions => translate_drone = Vector2.zero;
+        controls.WayPoint.SaveWayPoint.performed += ctx => save_way_point();
+        controls.WayPoint.DeleteWayPoint.performed += ctx => delete_way_point();
+        controls.WayPoint.ScrollWayPoint.performed += ctx => scroll_way_point();
+        controls.ModeSelection.ChangeMode.performed += ctx => change_mode();
+
     }
 
     void OnEnable()
     {
         controls.Power.Enable();
         controls.Translate.Enable();
+        controls.WayPoint.Enable();
+        controls.ModeSelection.Enable();
     }
 
     void OnDisable()
     {
         controls.Power.Disable();
         controls.Translate.Disable();
+        controls.WayPoint.Disable();
+        controls.ModeSelection.Disable();
     }
 
     void Start()
@@ -69,6 +100,8 @@ public class GameManager : MonoBehaviour
         _LandButton.onClick.AddListener(EventOnClickLandButton);
         _LandButton.gameObject.SetActive(false);
         _FlyButton.gameObject.SetActive(false);
+        _ModeSelector = FindObjectOfType<TextMeshProUGUI>();
+        change_mode();
     }
 
     void Update()

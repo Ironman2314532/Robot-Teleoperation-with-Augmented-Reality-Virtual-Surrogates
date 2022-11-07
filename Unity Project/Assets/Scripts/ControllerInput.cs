@@ -29,9 +29,9 @@ public partial class @ControllerInput : IInputActionCollection2, IDisposable
             ""actions"": [
                 {
                     ""name"": ""Move"",
-                    ""type"": ""Value"",
+                    ""type"": ""Button"",
                     ""id"": ""8a1a1951-20e3-4cc4-ab63-6c3b145fad09"",
-                    ""expectedControlType"": ""Stick"",
+                    ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
@@ -144,6 +144,124 @@ public partial class @ControllerInput : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""WayPoint"",
+            ""id"": ""dd057afb-1c18-445f-98b3-addf3b6772d3"",
+            ""actions"": [
+                {
+                    ""name"": ""SaveWayPoint"",
+                    ""type"": ""Button"",
+                    ""id"": ""86e961a7-83b0-459d-9b54-5af7bcc4f122"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""DeleteWayPoint"",
+                    ""type"": ""Button"",
+                    ""id"": ""c0647a2a-d6e8-4e1a-911e-8151fd68496b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Scroll WayPoint"",
+                    ""type"": ""Button"",
+                    ""id"": ""31bd257a-0c6c-4186-9afd-7b97d31be73e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""ae6ee82c-5d31-4a2e-8657-6ce3f5c1c315"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SaveWayPoint"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1956ed00-c954-468e-9139-1dd46cf3b920"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""DeleteWayPoint"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""fce4c0db-acbb-4910-a974-9410f412ff68"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Scroll WayPoint"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""959cd8e2-a1d2-4ea2-830d-d20867ac7bd6"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Scroll WayPoint"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""1606f667-1de3-479c-a9a2-7413a13085ca"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Scroll WayPoint"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                }
+            ]
+        },
+        {
+            ""name"": ""ModeSelection"",
+            ""id"": ""38432354-dfe5-4b67-9840-8e375479792c"",
+            ""actions"": [
+                {
+                    ""name"": ""ChangeMode"",
+                    ""type"": ""Button"",
+                    ""id"": ""e1cdc492-3231-45b4-acba-77d05f521254"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""c1914575-79bb-4e49-a2ff-02f5e43c8601"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChangeMode"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -154,6 +272,14 @@ public partial class @ControllerInput : IInputActionCollection2, IDisposable
         // Power
         m_Power = asset.FindActionMap("Power", throwIfNotFound: true);
         m_Power_DronePowerSwitch = m_Power.FindAction("DronePowerSwitch", throwIfNotFound: true);
+        // WayPoint
+        m_WayPoint = asset.FindActionMap("WayPoint", throwIfNotFound: true);
+        m_WayPoint_SaveWayPoint = m_WayPoint.FindAction("SaveWayPoint", throwIfNotFound: true);
+        m_WayPoint_DeleteWayPoint = m_WayPoint.FindAction("DeleteWayPoint", throwIfNotFound: true);
+        m_WayPoint_ScrollWayPoint = m_WayPoint.FindAction("Scroll WayPoint", throwIfNotFound: true);
+        // ModeSelection
+        m_ModeSelection = asset.FindActionMap("ModeSelection", throwIfNotFound: true);
+        m_ModeSelection_ChangeMode = m_ModeSelection.FindAction("ChangeMode", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -275,6 +401,88 @@ public partial class @ControllerInput : IInputActionCollection2, IDisposable
         }
     }
     public PowerActions @Power => new PowerActions(this);
+
+    // WayPoint
+    private readonly InputActionMap m_WayPoint;
+    private IWayPointActions m_WayPointActionsCallbackInterface;
+    private readonly InputAction m_WayPoint_SaveWayPoint;
+    private readonly InputAction m_WayPoint_DeleteWayPoint;
+    private readonly InputAction m_WayPoint_ScrollWayPoint;
+    public struct WayPointActions
+    {
+        private @ControllerInput m_Wrapper;
+        public WayPointActions(@ControllerInput wrapper) { m_Wrapper = wrapper; }
+        public InputAction @SaveWayPoint => m_Wrapper.m_WayPoint_SaveWayPoint;
+        public InputAction @DeleteWayPoint => m_Wrapper.m_WayPoint_DeleteWayPoint;
+        public InputAction @ScrollWayPoint => m_Wrapper.m_WayPoint_ScrollWayPoint;
+        public InputActionMap Get() { return m_Wrapper.m_WayPoint; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(WayPointActions set) { return set.Get(); }
+        public void SetCallbacks(IWayPointActions instance)
+        {
+            if (m_Wrapper.m_WayPointActionsCallbackInterface != null)
+            {
+                @SaveWayPoint.started -= m_Wrapper.m_WayPointActionsCallbackInterface.OnSaveWayPoint;
+                @SaveWayPoint.performed -= m_Wrapper.m_WayPointActionsCallbackInterface.OnSaveWayPoint;
+                @SaveWayPoint.canceled -= m_Wrapper.m_WayPointActionsCallbackInterface.OnSaveWayPoint;
+                @DeleteWayPoint.started -= m_Wrapper.m_WayPointActionsCallbackInterface.OnDeleteWayPoint;
+                @DeleteWayPoint.performed -= m_Wrapper.m_WayPointActionsCallbackInterface.OnDeleteWayPoint;
+                @DeleteWayPoint.canceled -= m_Wrapper.m_WayPointActionsCallbackInterface.OnDeleteWayPoint;
+                @ScrollWayPoint.started -= m_Wrapper.m_WayPointActionsCallbackInterface.OnScrollWayPoint;
+                @ScrollWayPoint.performed -= m_Wrapper.m_WayPointActionsCallbackInterface.OnScrollWayPoint;
+                @ScrollWayPoint.canceled -= m_Wrapper.m_WayPointActionsCallbackInterface.OnScrollWayPoint;
+            }
+            m_Wrapper.m_WayPointActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @SaveWayPoint.started += instance.OnSaveWayPoint;
+                @SaveWayPoint.performed += instance.OnSaveWayPoint;
+                @SaveWayPoint.canceled += instance.OnSaveWayPoint;
+                @DeleteWayPoint.started += instance.OnDeleteWayPoint;
+                @DeleteWayPoint.performed += instance.OnDeleteWayPoint;
+                @DeleteWayPoint.canceled += instance.OnDeleteWayPoint;
+                @ScrollWayPoint.started += instance.OnScrollWayPoint;
+                @ScrollWayPoint.performed += instance.OnScrollWayPoint;
+                @ScrollWayPoint.canceled += instance.OnScrollWayPoint;
+            }
+        }
+    }
+    public WayPointActions @WayPoint => new WayPointActions(this);
+
+    // ModeSelection
+    private readonly InputActionMap m_ModeSelection;
+    private IModeSelectionActions m_ModeSelectionActionsCallbackInterface;
+    private readonly InputAction m_ModeSelection_ChangeMode;
+    public struct ModeSelectionActions
+    {
+        private @ControllerInput m_Wrapper;
+        public ModeSelectionActions(@ControllerInput wrapper) { m_Wrapper = wrapper; }
+        public InputAction @ChangeMode => m_Wrapper.m_ModeSelection_ChangeMode;
+        public InputActionMap Get() { return m_Wrapper.m_ModeSelection; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(ModeSelectionActions set) { return set.Get(); }
+        public void SetCallbacks(IModeSelectionActions instance)
+        {
+            if (m_Wrapper.m_ModeSelectionActionsCallbackInterface != null)
+            {
+                @ChangeMode.started -= m_Wrapper.m_ModeSelectionActionsCallbackInterface.OnChangeMode;
+                @ChangeMode.performed -= m_Wrapper.m_ModeSelectionActionsCallbackInterface.OnChangeMode;
+                @ChangeMode.canceled -= m_Wrapper.m_ModeSelectionActionsCallbackInterface.OnChangeMode;
+            }
+            m_Wrapper.m_ModeSelectionActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @ChangeMode.started += instance.OnChangeMode;
+                @ChangeMode.performed += instance.OnChangeMode;
+                @ChangeMode.canceled += instance.OnChangeMode;
+            }
+        }
+    }
+    public ModeSelectionActions @ModeSelection => new ModeSelectionActions(this);
     public interface ITranslateActions
     {
         void OnMove(InputAction.CallbackContext context);
@@ -282,5 +490,15 @@ public partial class @ControllerInput : IInputActionCollection2, IDisposable
     public interface IPowerActions
     {
         void OnDronePowerSwitch(InputAction.CallbackContext context);
+    }
+    public interface IWayPointActions
+    {
+        void OnSaveWayPoint(InputAction.CallbackContext context);
+        void OnDeleteWayPoint(InputAction.CallbackContext context);
+        void OnScrollWayPoint(InputAction.CallbackContext context);
+    }
+    public interface IModeSelectionActions
+    {
+        void OnChangeMode(InputAction.CallbackContext context);
     }
 }
