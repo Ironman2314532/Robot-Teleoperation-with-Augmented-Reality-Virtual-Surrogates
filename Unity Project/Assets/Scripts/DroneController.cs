@@ -19,7 +19,7 @@ public class DroneController : MonoBehaviour
     }
 
     public int way_point_number;
-    int way_point_tracker = 0;
+    public int way_point_tracker = 0;
     const int POINTS = 10;
     public float[,] way_point_tracker_array = new float[POINTS, 4];
 

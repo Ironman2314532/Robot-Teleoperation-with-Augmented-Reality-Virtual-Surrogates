@@ -108,7 +108,9 @@ public class GameManager : MonoBehaviour
             _VirtualSurrogate.way_point = new Vector3(_PrimaryDrone.GetDroneLocation().x, 4.57698f, _PrimaryDrone.GetDroneLocation().z);
             _VirtualSurrogate.UpdateDrone();
         }
-        _VirtualSurrogate.way_point_number = way_point_marker_position;
+        _VirtualSurrogate.way_point_tracker = 0;
+
+        _VirtualSurrogate.way_point_number = way_point_marker_position - 1;
         for (int i = 0; i < way_point_marker_position; i++)
         {
             _VirtualSurrogate.way_point_tracker_array[i, 0] = way_point_array[i, 0];
@@ -116,7 +118,24 @@ public class GameManager : MonoBehaviour
             _VirtualSurrogate.way_point_tracker_array[i, 2] = way_point_array[i, 2];
         }
     }
-    void execute_way_points() { }
+    void execute_way_points()
+    {
+        if (_PrimaryDrone._State == DroneController.DroneState.DRONE_STATE_IDLE)
+        {
+            power_switch_pressed();
+            _PrimaryDrone.UpdateDrone();
+        }
+        _PrimaryDrone.way_point_tracker = 0;
+
+        _PrimaryDrone.way_point_number = way_point_marker_position - 1;
+        for (int i = 0; i < way_point_marker_position; i++)
+        {
+            _PrimaryDrone.way_point_tracker_array[i, 0] = way_point_array[i, 0];
+            _PrimaryDrone.way_point_tracker_array[i, 1] = way_point_array[i, 1];
+            _PrimaryDrone.way_point_tracker_array[i, 2] = way_point_array[i, 2];
+        }
+        _PrimaryDrone._State = DroneController.DroneState.DRONE_STATE_WAY_POINT_FOLLOW;
+    }
 
     void change_mode()
     {
@@ -127,7 +146,8 @@ public class GameManager : MonoBehaviour
             _ModeSelector.text = "Virtual Surrogate Control Mode";
             _VirtualSurrogate.DroneVisible(true);
             _ModeSelector.color = new Color32(0, 135, 62, 255);
-            _VirtualSurrogate.SetDroneLocation(_PrimaryDrone.GetDroneLocation());
+            _VirtualSurrogate.SetDroneLocation(new Vector3(_PrimaryDrone.GetDroneLocation().x, 0, _PrimaryDrone.GetDroneLocation().z));
+            power_switch_pressed();
         }
         else
         {
