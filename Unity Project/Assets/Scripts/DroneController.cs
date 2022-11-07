@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DroneController : MonoBehaviour
 {
-    enum DroneState
+    public enum DroneState
     {
         DRONE_STATE_IDLE,
         DRONE_STATE_START_TAKINGOFF,
@@ -17,10 +17,12 @@ public class DroneController : MonoBehaviour
         DRONE_STATE_WAIT_ENGINE_STOP
     }
 
-    DroneState _State;
+    public DroneState _State;
     Animator _Anim;
     Vector3 _Speed = new Vector3(0.0f, 0.0f, 0.0f);
     public float _SpeedMultipler = 1.0f;
+    public bool _drone_power_state = false;
+
 
     public bool IsIdle()
     {
@@ -51,6 +53,21 @@ public class DroneController : MonoBehaviour
         UpdateDrone();
     }
 
+    public void SetDroneLocation(Vector3 _position)
+    {
+        transform.position = _position;
+    }
+
+    public Vector3 GetDroneLocation()
+    {
+        return (gameObject.transform.position);
+    }
+
+    public void DroneVisible(bool _drone_visible)
+    {
+        gameObject.SetActive(_drone_visible);
+    }
+
     void UpdateDrone()
     {
         switch (_State)
@@ -78,7 +95,6 @@ public class DroneController : MonoBehaviour
                 break;
             case DroneState.DRONE_STATE_START_LANDING:
                 _Anim.SetBool("MoveDown", true);
-                Debug.Log(_State);
                 _State = DroneState.DRONE_STATE_LANDING;
                 break;
             case DroneState.DRONE_STATE_LANDING:
@@ -94,7 +110,6 @@ public class DroneController : MonoBehaviour
                     _State = DroneState.DRONE_STATE_IDLE;
                 break;
         }
-        Debug.Log(_State);
     }
     void Start()
     {

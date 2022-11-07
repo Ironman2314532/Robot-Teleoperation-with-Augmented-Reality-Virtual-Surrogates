@@ -7,42 +7,50 @@ using TMPro; //For Text Editing
 
 public class GameManager : MonoBehaviour
 {
-    public DroneController _DroneController;
+    public DroneController _PrimaryDrone;
+    public DroneController _VirtualSurrogate;
     ControllerInput controls;
-    public Button _FlyButton;
-    public Button _LandButton;
     public TextMeshProUGUI _ModeSelector;
-    bool _drone_power_state = false;
     bool _virtual_surrogate_control_mode = true;
     Vector2 translate_drone;
 
-    void EventOnClickFlyButton()
-    {
-        if (_DroneController.IsIdle())
-        {
-            _DroneController.TakeOff();
-            _FlyButton.gameObject.SetActive(false);
-            _drone_power_state = true;
-        }
-    }
-
-    void EventOnClickLandButton()
-    {
-        if (_DroneController.IsFlying())
-        {
-            _DroneController.Land();
-            _LandButton.gameObject.SetActive(false);
-            _drone_power_state = false;
-        }
-    }
-
     void power_switch_pressed()
     {
-        _drone_power_state = !_drone_power_state;
-        if (_drone_power_state)
-            EventOnClickFlyButton();
+        if (!_virtual_surrogate_control_mode)
+        {
+            _PrimaryDrone._drone_power_state = !_PrimaryDrone._drone_power_state;
+            _VirtualSurrogate._drone_power_state = _PrimaryDrone._drone_power_state;
+            if (_PrimaryDrone._drone_power_state)
+            {
+                if (_PrimaryDrone.IsIdle())
+                {
+                    _PrimaryDrone.TakeOff();
+                    _VirtualSurrogate.TakeOff();
+                }
+            }
+            else
+            {
+                if (_PrimaryDrone.IsFlying())
+                {
+                    _PrimaryDrone.Land();
+                    _VirtualSurrogate.Land();
+                }
+            }
+        }
         else
-            EventOnClickLandButton();
+        {
+            _VirtualSurrogate._drone_power_state = !_VirtualSurrogate._drone_power_state;
+            if (_VirtualSurrogate._drone_power_state)
+            {
+                if (_VirtualSurrogate.IsIdle())
+                    _VirtualSurrogate.TakeOff();
+            }
+            else
+            {
+                if (_VirtualSurrogate.IsFlying())
+                    _VirtualSurrogate.Land();
+            }
+        }
     }
 
     void save_way_point() { }
@@ -55,13 +63,29 @@ public class GameManager : MonoBehaviour
         {
             _ModeSelector.text = "Virtual Surrogate Control Mode";
             _ModeSelector.color = new Color32(0, 135, 62, 255);
+            _VirtualSurrogate.DroneVisible(true);
         }
         else
         {
             _ModeSelector.text = "Real Time Control Mode";
             _ModeSelector.color = new Color32(128, 0, 0, 255);
-        }
+            if (_PrimaryDrone.IsFlying())
+            {
+                if (_VirtualSurrogate.IsFlying())
+                    return;
+                else if (_VirtualSurrogate.IsIdle())
+                    _VirtualSurrogate.TakeOff();
+            }
+            else if (_PrimaryDrone.IsIdle())
+            {
+                if (_VirtualSurrogate.IsFlying())
+                    _VirtualSurrogate.Land();
+                else if (_VirtualSurrogate.IsIdle())
+                    return;
+            }
+            else { }
 
+        }
     }
 
 
@@ -96,20 +120,20 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        _FlyButton.onClick.AddListener(EventOnClickFlyButton);
-        _LandButton.onClick.AddListener(EventOnClickLandButton);
-        _LandButton.gameObject.SetActive(false);
-        _FlyButton.gameObject.SetActive(false);
         _ModeSelector = FindObjectOfType<TextMeshProUGUI>();
         change_mode();
     }
 
     void Update()
     {
-        if (_DroneController.IsFlying())
-            _LandButton.gameObject.SetActive(true);
-        if (_DroneController.IsIdle())
-            _FlyButton.gameObject.SetActive(true);
-        _DroneController.Move(translate_drone.x, translate_drone.y);
+        if (_virtual_surrogate_control_mode)
+            _VirtualSurrogate.Move(translate_drone.x, translate_drone.y);
+        else
+        {
+            _PrimaryDrone.Move(translate_drone.x, translate_drone.y);
+            _VirtualSurrogate.SetDroneLocation(_PrimaryDrone.GetDroneLocation());
+        }
+        Debug.Log("Primary Drone: " + _PrimaryDrone._State);
+        Debug.Log("Virtual Surrogate: " + _VirtualSurrogate._State);
     }
 }
