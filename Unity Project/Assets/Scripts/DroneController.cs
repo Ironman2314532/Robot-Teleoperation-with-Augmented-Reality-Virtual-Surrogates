@@ -68,7 +68,7 @@ public class DroneController : MonoBehaviour
         gameObject.SetActive(_drone_visible);
     }
 
-    void UpdateDrone()
+    public void UpdateDrone()
     {
         switch (_State)
         {
