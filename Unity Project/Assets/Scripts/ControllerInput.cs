@@ -35,6 +35,15 @@ public partial class @ControllerInput : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Height"",
+                    ""type"": ""Value"",
+                    ""id"": ""65757d50-f5f1-4906-9d12-6f0e3c26807a"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -50,59 +59,15 @@ public partial class @ControllerInput : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""2D Vector"",
-                    ""id"": ""4c58a973-a67f-49ce-8408-06ee3a3a26ae"",
-                    ""path"": ""2DVector"",
+                    ""name"": """",
+                    ""id"": ""c9326dd3-89a9-433e-8b9e-9982def76245"",
+                    ""path"": ""<Gamepad>/leftStick/y"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Move"",
-                    ""isComposite"": true,
+                    ""action"": ""Height"",
+                    ""isComposite"": false,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""60ac2f66-1e0e-482c-a4d0-c9ad3833acfd"",
-                    ""path"": ""<Keyboard>/upArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""9ea240f0-be4f-40d3-9bf9-94929b52adb4"",
-                    ""path"": ""<Keyboard>/downArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""d32e926f-9382-4941-9a5a-4fda51d61e6c"",
-                    ""path"": ""<Keyboard>/leftArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""2d752e77-1c8d-44b7-9b55-759feef965f1"",
-                    ""path"": ""<Keyboard>/rightArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
                 }
             ]
         },
@@ -125,17 +90,6 @@ public partial class @ControllerInput : IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""ae9991ec-70e9-4589-b97b-ed277925cec8"",
                     ""path"": ""<Gamepad>/start"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""DronePowerSwitch"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""392ea4de-9813-4213-9b7a-4d1f49dc4701"",
-                    ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -175,13 +129,31 @@ public partial class @ControllerInput : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""RetraceWayPoints"",
+                    ""type"": ""Button"",
+                    ""id"": ""63a623cf-4358-454f-9175-6822423fafb2"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ExecuteWayPoints"",
+                    ""type"": ""Button"",
+                    ""id"": ""8ee3a2d7-56ba-4acb-a1f7-0ecf17e8851e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
                 {
                     ""name"": """",
                     ""id"": ""ae6ee82c-5d31-4a2e-8657-6ce3f5c1c315"",
-                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""path"": ""<Gamepad>/buttonEast"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -192,7 +164,7 @@ public partial class @ControllerInput : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""1956ed00-c954-468e-9139-1dd46cf3b920"",
-                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""path"": ""<Gamepad>/buttonWest"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -232,6 +204,28 @@ public partial class @ControllerInput : IInputActionCollection2, IDisposable
                     ""action"": ""Scroll WayPoint"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7685ac2f-9b49-45ac-81ba-62c1b8d9a13f"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RetraceWayPoints"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5f32c4ac-1756-4c27-8d6e-a3ca614426c6"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ExecuteWayPoints"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -269,6 +263,7 @@ public partial class @ControllerInput : IInputActionCollection2, IDisposable
         // Translate
         m_Translate = asset.FindActionMap("Translate", throwIfNotFound: true);
         m_Translate_Move = m_Translate.FindAction("Move", throwIfNotFound: true);
+        m_Translate_Height = m_Translate.FindAction("Height", throwIfNotFound: true);
         // Power
         m_Power = asset.FindActionMap("Power", throwIfNotFound: true);
         m_Power_DronePowerSwitch = m_Power.FindAction("DronePowerSwitch", throwIfNotFound: true);
@@ -277,6 +272,8 @@ public partial class @ControllerInput : IInputActionCollection2, IDisposable
         m_WayPoint_SaveWayPoint = m_WayPoint.FindAction("SaveWayPoint", throwIfNotFound: true);
         m_WayPoint_DeleteWayPoint = m_WayPoint.FindAction("DeleteWayPoint", throwIfNotFound: true);
         m_WayPoint_ScrollWayPoint = m_WayPoint.FindAction("Scroll WayPoint", throwIfNotFound: true);
+        m_WayPoint_RetraceWayPoints = m_WayPoint.FindAction("RetraceWayPoints", throwIfNotFound: true);
+        m_WayPoint_ExecuteWayPoints = m_WayPoint.FindAction("ExecuteWayPoints", throwIfNotFound: true);
         // ModeSelection
         m_ModeSelection = asset.FindActionMap("ModeSelection", throwIfNotFound: true);
         m_ModeSelection_ChangeMode = m_ModeSelection.FindAction("ChangeMode", throwIfNotFound: true);
@@ -340,11 +337,13 @@ public partial class @ControllerInput : IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Translate;
     private ITranslateActions m_TranslateActionsCallbackInterface;
     private readonly InputAction m_Translate_Move;
+    private readonly InputAction m_Translate_Height;
     public struct TranslateActions
     {
         private @ControllerInput m_Wrapper;
         public TranslateActions(@ControllerInput wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_Translate_Move;
+        public InputAction @Height => m_Wrapper.m_Translate_Height;
         public InputActionMap Get() { return m_Wrapper.m_Translate; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -357,6 +356,9 @@ public partial class @ControllerInput : IInputActionCollection2, IDisposable
                 @Move.started -= m_Wrapper.m_TranslateActionsCallbackInterface.OnMove;
                 @Move.performed -= m_Wrapper.m_TranslateActionsCallbackInterface.OnMove;
                 @Move.canceled -= m_Wrapper.m_TranslateActionsCallbackInterface.OnMove;
+                @Height.started -= m_Wrapper.m_TranslateActionsCallbackInterface.OnHeight;
+                @Height.performed -= m_Wrapper.m_TranslateActionsCallbackInterface.OnHeight;
+                @Height.canceled -= m_Wrapper.m_TranslateActionsCallbackInterface.OnHeight;
             }
             m_Wrapper.m_TranslateActionsCallbackInterface = instance;
             if (instance != null)
@@ -364,6 +366,9 @@ public partial class @ControllerInput : IInputActionCollection2, IDisposable
                 @Move.started += instance.OnMove;
                 @Move.performed += instance.OnMove;
                 @Move.canceled += instance.OnMove;
+                @Height.started += instance.OnHeight;
+                @Height.performed += instance.OnHeight;
+                @Height.canceled += instance.OnHeight;
             }
         }
     }
@@ -408,6 +413,8 @@ public partial class @ControllerInput : IInputActionCollection2, IDisposable
     private readonly InputAction m_WayPoint_SaveWayPoint;
     private readonly InputAction m_WayPoint_DeleteWayPoint;
     private readonly InputAction m_WayPoint_ScrollWayPoint;
+    private readonly InputAction m_WayPoint_RetraceWayPoints;
+    private readonly InputAction m_WayPoint_ExecuteWayPoints;
     public struct WayPointActions
     {
         private @ControllerInput m_Wrapper;
@@ -415,6 +422,8 @@ public partial class @ControllerInput : IInputActionCollection2, IDisposable
         public InputAction @SaveWayPoint => m_Wrapper.m_WayPoint_SaveWayPoint;
         public InputAction @DeleteWayPoint => m_Wrapper.m_WayPoint_DeleteWayPoint;
         public InputAction @ScrollWayPoint => m_Wrapper.m_WayPoint_ScrollWayPoint;
+        public InputAction @RetraceWayPoints => m_Wrapper.m_WayPoint_RetraceWayPoints;
+        public InputAction @ExecuteWayPoints => m_Wrapper.m_WayPoint_ExecuteWayPoints;
         public InputActionMap Get() { return m_Wrapper.m_WayPoint; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -433,6 +442,12 @@ public partial class @ControllerInput : IInputActionCollection2, IDisposable
                 @ScrollWayPoint.started -= m_Wrapper.m_WayPointActionsCallbackInterface.OnScrollWayPoint;
                 @ScrollWayPoint.performed -= m_Wrapper.m_WayPointActionsCallbackInterface.OnScrollWayPoint;
                 @ScrollWayPoint.canceled -= m_Wrapper.m_WayPointActionsCallbackInterface.OnScrollWayPoint;
+                @RetraceWayPoints.started -= m_Wrapper.m_WayPointActionsCallbackInterface.OnRetraceWayPoints;
+                @RetraceWayPoints.performed -= m_Wrapper.m_WayPointActionsCallbackInterface.OnRetraceWayPoints;
+                @RetraceWayPoints.canceled -= m_Wrapper.m_WayPointActionsCallbackInterface.OnRetraceWayPoints;
+                @ExecuteWayPoints.started -= m_Wrapper.m_WayPointActionsCallbackInterface.OnExecuteWayPoints;
+                @ExecuteWayPoints.performed -= m_Wrapper.m_WayPointActionsCallbackInterface.OnExecuteWayPoints;
+                @ExecuteWayPoints.canceled -= m_Wrapper.m_WayPointActionsCallbackInterface.OnExecuteWayPoints;
             }
             m_Wrapper.m_WayPointActionsCallbackInterface = instance;
             if (instance != null)
@@ -446,6 +461,12 @@ public partial class @ControllerInput : IInputActionCollection2, IDisposable
                 @ScrollWayPoint.started += instance.OnScrollWayPoint;
                 @ScrollWayPoint.performed += instance.OnScrollWayPoint;
                 @ScrollWayPoint.canceled += instance.OnScrollWayPoint;
+                @RetraceWayPoints.started += instance.OnRetraceWayPoints;
+                @RetraceWayPoints.performed += instance.OnRetraceWayPoints;
+                @RetraceWayPoints.canceled += instance.OnRetraceWayPoints;
+                @ExecuteWayPoints.started += instance.OnExecuteWayPoints;
+                @ExecuteWayPoints.performed += instance.OnExecuteWayPoints;
+                @ExecuteWayPoints.canceled += instance.OnExecuteWayPoints;
             }
         }
     }
@@ -486,6 +507,7 @@ public partial class @ControllerInput : IInputActionCollection2, IDisposable
     public interface ITranslateActions
     {
         void OnMove(InputAction.CallbackContext context);
+        void OnHeight(InputAction.CallbackContext context);
     }
     public interface IPowerActions
     {
@@ -496,6 +518,8 @@ public partial class @ControllerInput : IInputActionCollection2, IDisposable
         void OnSaveWayPoint(InputAction.CallbackContext context);
         void OnDeleteWayPoint(InputAction.CallbackContext context);
         void OnScrollWayPoint(InputAction.CallbackContext context);
+        void OnRetraceWayPoints(InputAction.CallbackContext context);
+        void OnExecuteWayPoints(InputAction.CallbackContext context);
     }
     public interface IModeSelectionActions
     {

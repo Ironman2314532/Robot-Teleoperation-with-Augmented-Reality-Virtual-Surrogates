@@ -14,15 +14,23 @@ public class DroneController : MonoBehaviour
         DRONE_STATE_START_LANDING,
         DRONE_STATE_LANDING,
         DRONE_STATE_LANDED,
-        DRONE_STATE_WAIT_ENGINE_STOP
+        DRONE_STATE_WAIT_ENGINE_STOP,
+        DRONE_STATE_WAY_POINT_FOLLOW
     }
 
+    public int way_point_number;
+    int way_point_tracker = 0;
+    const int POINTS = 10;
+    public float[,] way_point_tracker_array = new float[POINTS, 4];
+
+    float distance_error = 0.001f;
     public DroneState _State;
     Animator _Anim;
     Vector3 _Speed = new Vector3(0.0f, 0.0f, 0.0f);
     public float _SpeedMultipler = 1.0f;
     public bool _drone_power_state = false;
 
+    public Vector3 way_point;
 
     public bool IsIdle()
     {
@@ -37,7 +45,6 @@ public class DroneController : MonoBehaviour
     public bool IsFlying()
     {
         return (_State == DroneState.DRONE_STATE_FLYING);
-
     }
 
     public void Land()
@@ -46,9 +53,10 @@ public class DroneController : MonoBehaviour
 
     }
 
-    public void Move(float _speedX, float _speedZ)
+    public void Move(float _speedX, float _speedY, float _speedZ)
     {
         _Speed.x = _speedX;
+        _Speed.y = _speedY;
         _Speed.z = _speedZ;
         UpdateDrone();
     }
@@ -57,6 +65,7 @@ public class DroneController : MonoBehaviour
     {
         transform.position = _position;
     }
+
 
     public Vector3 GetDroneLocation()
     {
@@ -90,8 +99,13 @@ public class DroneController : MonoBehaviour
                 float angleZ = -30.0f * _Speed.x * 60.0f * Time.deltaTime;
                 float angleX = 30.0f * _Speed.z * 60.0f * Time.deltaTime;
                 Vector3 rotation = transform.localRotation.eulerAngles;
-                transform.localPosition += _Speed * _SpeedMultipler * Time.deltaTime;
-                transform.localRotation = Quaternion.Euler(angleX, rotation.y, angleZ);
+                Vector3 _distance = _Speed * _SpeedMultipler * Time.deltaTime;
+                if ((transform.localPosition.y < 0) && _distance.y < 0) { }
+                else
+                {
+                    transform.localPosition += _Speed * _SpeedMultipler * Time.deltaTime;
+                    transform.localRotation = Quaternion.Euler(angleX, rotation.y, angleZ);
+                }
                 break;
             case DroneState.DRONE_STATE_START_LANDING:
                 _Anim.SetBool("MoveDown", true);
@@ -109,6 +123,9 @@ public class DroneController : MonoBehaviour
                 if (_Anim.GetBool("Land") == false)
                     _State = DroneState.DRONE_STATE_IDLE;
                 break;
+            case DroneState.DRONE_STATE_WAY_POINT_FOLLOW:
+                way_point = new Vector3(way_point_tracker_array[way_point_tracker, 0], way_point_tracker_array[way_point_tracker, 1], way_point_tracker_array[way_point_tracker, 2]);
+                break;
         }
     }
     void Start()
@@ -119,5 +136,19 @@ public class DroneController : MonoBehaviour
 
     void Update()
     {
+        if (_State == DroneState.DRONE_STATE_WAY_POINT_FOLLOW)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, way_point, 1.1f * Time.deltaTime);
+            if ((Vector3.Distance(transform.position, way_point) < distance_error))
+            {
+                way_point_tracker += 1;
+                if (way_point_tracker > way_point_number)
+                {
+                    _State = DroneState.DRONE_STATE_FLYING;
+                    return;
+                }
+                way_point = new Vector3(way_point_tracker_array[way_point_tracker, 0], way_point_tracker_array[way_point_tracker, 1], way_point_tracker_array[way_point_tracker, 2]);
+            }
+        }
     }
 }
