@@ -2,8 +2,5 @@
 .vscode/*
 Logs/*
 *.meta
-Temp/*
 Library/*
-ProjectSettings/*
-UserSettings/*
 Assembly-CSharp.csproj
