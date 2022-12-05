@@ -1,9 +1,3 @@
 **/desktop.ini
-.vscode/*
-Logs/*
-*.meta
-Temp/*
-Library/*
-ProjectSettings/*
-UserSettings/*
-Assembly-CSharp.csproj
+Unity Project/
+Resources/Unity Resources
