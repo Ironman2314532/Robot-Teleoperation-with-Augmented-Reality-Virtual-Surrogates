@@ -1,0 +1,13 @@
+**/desktop.ini
+/.vscode/*
+Logs/*
+build/*
+install/*
+*.meta
+Temp/*
+Library/*
+obj/*
+Packages/*
+ProjectSettings/*
+UserSettings/*
+Assembly-CSharp.csproj

@@ -1,0 +1,240 @@
+{
+    "name": "ControllerInput",
+    "maps": [
+        {
+            "name": "Translate",
+            "id": "e4136234-4153-42f1-9058-5f4c13be6495",
+            "actions": [
+                {
+                    "name": "Move",
+                    "type": "Button",
+                    "id": "8a1a1951-20e3-4cc4-ab63-6c3b145fad09",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Height",
+                    "type": "Value",
+                    "id": "65757d50-f5f1-4906-9d12-6f0e3c26807a",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "59eac599-2d2c-4c05-bf53-e25a0c6db1dd",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c9326dd3-89a9-433e-8b9e-9982def76245",
+                    "path": "<Gamepad>/leftStick/y",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Height",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Power",
+            "id": "3102d443-5e50-4b5b-814a-4eb78bbde022",
+            "actions": [
+                {
+                    "name": "DronePowerSwitch",
+                    "type": "Button",
+                    "id": "3ea32bcc-6fec-4d4f-924c-f9e9f54dd61e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "ae9991ec-70e9-4589-b97b-ed277925cec8",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DronePowerSwitch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "WayPoint",
+            "id": "dd057afb-1c18-445f-98b3-addf3b6772d3",
+            "actions": [
+                {
+                    "name": "SaveWayPoint",
+                    "type": "Button",
+                    "id": "86e961a7-83b0-459d-9b54-5af7bcc4f122",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "DeleteWayPoint",
+                    "type": "Button",
+                    "id": "c0647a2a-d6e8-4e1a-911e-8151fd68496b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Scroll WayPoint",
+                    "type": "Button",
+                    "id": "31bd257a-0c6c-4186-9afd-7b97d31be73e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "RetraceWayPoints",
+                    "type": "Button",
+                    "id": "63a623cf-4358-454f-9175-6822423fafb2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ExecuteWayPoints",
+                    "type": "Button",
+                    "id": "8ee3a2d7-56ba-4acb-a1f7-0ecf17e8851e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "ae6ee82c-5d31-4a2e-8657-6ce3f5c1c315",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SaveWayPoint",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1956ed00-c954-468e-9139-1dd46cf3b920",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DeleteWayPoint",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "1D Axis",
+                    "id": "fce4c0db-acbb-4910-a974-9410f412ff68",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Scroll WayPoint",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "959cd8e2-a1d2-4ea2-830d-d20867ac7bd6",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Scroll WayPoint",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "1606f667-1de3-479c-a9a2-7413a13085ca",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Scroll WayPoint",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "7685ac2f-9b49-45ac-81ba-62c1b8d9a13f",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RetraceWayPoints",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5f32c4ac-1756-4c27-8d6e-a3ca614426c6",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ExecuteWayPoints",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "ModeSelection",
+            "id": "38432354-dfe5-4b67-9840-8e375479792c",
+            "actions": [
+                {
+                    "name": "ChangeMode",
+                    "type": "Button",
+                    "id": "e1cdc492-3231-45b4-acba-77d05f521254",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "c1914575-79bb-4e49-a2ff-02f5e43c8601",
+                    "path": "<Gamepad>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ChangeMode",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
