@@ -5,12 +5,17 @@ Table of Contents
 - [Introduction](#introduction)
 - [How to run the project](#how-to-run-the-project)
 - [Interested in Editing the project for your own use?](#interested-in-editing-the-project-for-your-own-use)
-  - [Collect the Project Files](#collect-the-project-files)
-  - [**Unity Hub**](#unity-hub)
-  - [**Android Studio**](#android-studio)
-  - [**Android NDK**](#android-ndk)
+  - [Collect the Essentials to setup the project](#collect-the-essentials-to-setup-the-project)
+    - [Collect the Project Files](#collect-the-project-files)
+    - [Unity Hub](#unity-hub)
+    - [Android Studio](#android-studio)
+    - [Android NDK](#android-ndk)
+    - [Visual Studio Code](#visual-studio-code)
+  - [Let's start with environment setup](#lets-start-with-environment-setup)
+    - [Setup Directories](#setup-directories)
 - [Tools Used](#tools-used)
 - [Designer Details](#designer-details)
+- [References](#references)
 
 <!-- /TOC -->
 
@@ -51,11 +56,13 @@ Here Below is the guide on how you can use the project for your own purposes. Th
 _Note: The current project is design and built for Unity Editor Version: 2020.3.42f1 - Android Build.
 If you are interested in using any other version of Editor and platform, feel free to do so but take a quick moment to google on how to change editor or platform versions._
 
-## Collect the Project Files
+## Collect the Essentials to setup the project
+
+### Collect the Project Files
 
 [Click to Download Project Files](https://drive.google.com/drive/folders/1F6m2Nc7uq7a-VYWZzda4WF9UxTImIZbO?usp=share_link)
 
-## **Unity Hub**
+### Unity Hub
 
 First task for making the project run is to download UnityHub.
 
@@ -73,12 +80,42 @@ First task for making the project run is to download UnityHub.
    5. `Mac Build Support (Mono)`
 8. Finally Press the `Install` on bottom right and wait for the whole setup to finish.
 
-## **Android Studio**
+### Android Studio
 
 1. [Click Link to Download Android Studio](https://developer.android.com/studio/?gclid=CjwKCAiAp7GcBhA0EiwA9U0mtlgnFQGdP97omDMtlMae11TxG08MUOjuRMRrdt3e83YcsLvDqmisWhoCT-UQAvD_BwE&gclsrc=aw.ds)
 2. Install the Android Studio for your device
 
-## **Android NDK**
+### Android NDK
+
+### Visual Studio Code
+
+Yes, I know. You can use any other IDE that you may like but I love VS Code. _So deal with it!!_
+
+## Let's start with environment setup
+
+### Setup Directories
+
+Go to the Desktop and Right Click to Open new Terminal. Type the Following Command inside it
+
+```
+mkdir virtual_surrogate_ar_project
+cd virtual_surrogate_ar_project
+```
+
+Clone the GitHub Repository here with by typing the following in terminal
+
+```
+git clone https://github.com/parth-20-07/Robot-Teleoperation-with-Augmented-Reality-Virtual-Surrogates
+```
+
+Wait for the cloning to Finish and then open the project in VS Code by typing
+
+```
+cd Robot-Teleoperation-with-Augmented-Reality-Virtual-Surrogates
+code .
+```
+
+Extract the Project Files that you downloaded while collecting project file into current directory. You current `Robot-Teleoperation-with-Augmented-Reality-Virtual-Surrogates` directory should have the following files when you type `ls` into your terminal:
 
 <br>
 
@@ -96,7 +133,17 @@ First task for making the project run is to download UnityHub.
 
 - Designed for:
   - Worcester Polytechnic Institute
-  - RBE 500: Foundation of Robotics - Final Project
+  - RBE 526: Human Robot Interaction - Final Project
 - Designed by:
   - [Parth Patel](mailto:parth.pmech@gmail.com)
   - [Thira Patel](mailto:thira.p23@gmail.com)
+
+# References
+
+- Android App Testing Guide: [Quickly preview your game on Android Device | Unity Tutorial](https://youtu.be/iCXwaehzRFQ)
+- Research Guide: [Robot teleoperation with augmented reality virtual surrogates](https://ieeexplore.ieee.org/abstract/document/8673306)
+- Understanding Augmented Reality in Unity: [Augmented Reality for Everyone - Full Course](https://youtu.be/WzfDo2Wpxks)
+- Configuring Controller in Unity: [CONTROLLER INPUT in Unity!](https://youtu.be/p-3S73MaDP8)
+- WayPoint Tracking Design: [Unity Basics - Waypoint Path system in Unity](https://youtu.be/EwHiMQ3jdHw)
+- Drone Design and Control: [Unity AR foundation tutorial - AR drone for iOS and Android](https://youtu.be/MzFE2QfgohE)
+- And a Super Huge help to [stackoverflow](https://stackoverflow.com/) for existing and making programming possible for us!!
