@@ -46,6 +46,7 @@ _Super Note: Remember, If anything doesnt work as it is supposed to, just use th
 # How to run the project
 
 1. Download the .apk file from the `/Resources/Build/`.
+_(Note: There are two versions of apk available in the folder. One is meant for Arm64 Architecture and another is for Arm7. First try out the Arm64 Architecture, if that fails, go for the Arm7 type)_
 2. Install it on an Android Device with Version 10 or higher.
 3. Provide Camera Access to the app for Augmented Reality usage.
 4. Connect a gamePad Controller to it. You might need a USB Type-A to Type-C or Micro Type-B connector based on your phone.
