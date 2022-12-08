@@ -133,7 +133,9 @@ code .
 ```
 
 Extract the Project Files that you downloaded while collecting project file into current directory. You extracted files will look something like this.
-![](/Resources/Screenshots/Extracted%20Files.png)
+
+![Extracted Files](/Resources/Screenshots/Extracted%20Files.png)
+
 Copy all the files and Folders inside this and paste it into the directory just created by you in `virtual_surrogate_ar_project/Robot-Teleoperation-with-Augmented-Reality-Virtual-Surrogates/Unity_Files`.
 The `Robot-Teleoperation-with-Augmented-Reality-Virtual-Surrogates` directory should have the following files and folders
 
@@ -158,7 +160,9 @@ _Note: When Launching the project, you might encounter issues like not Editor Ve
 ### Import Essential Packages
 
 1. Click the `Window` button in the menu bar and click on `Package Manager` option. A new window as shown below will pop up.
+
    ![Package Manager](/Resources/Screenshots/Package%20Manager.png)
+
 2. In the Top Left, you will see the current package registery option as `Packages: In Project`. Click the tab and choose `Unity Registry` to search from the global unity package registry.
 
    1. **Input System**
@@ -295,18 +299,23 @@ float z = location.z;
 
     Here how's the marker is spawned:
     This creates the sphere on request.
+    
     `GameObject marker = GameObject.CreatePrimitive(PrimitiveType.Sphere);`
 
     Set the size of Sphere to the radius of 0.5m:
+    
     `marker.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);`
 
-    Set the sphere as child of the: `way_point_marker_parent`:
+    Set the sphere as child of the `way_point_marker_parent`:
+    
     `marker.transform.parent = way_point_marker_parent.transform;`
 
     Set the location of the sphere on the wayPoint location:
+
     `marker.transform.position = _position;`
 
     Find the color renderer component of the sphere:
+
     `var sphereRenderer = marker.GetComponent<Renderer>();`
 
     Set the color of the marker as Green for the First Marker, Red for the 10th marker and white for the rest:
@@ -330,6 +339,7 @@ float z = location.z;
     ```
 
     Finding the Line Renderer Component initiated in `void Start()`
+ 
     `LineRenderer waypoint_line = GetComponent<LineRenderer>();`
 
     The LineRenderer Object takes four inputs to plot the line:
@@ -339,7 +349,7 @@ float z = location.z;
     - Ending Point Index
     - Ending Point Coordinates
       Everytime when a WayPoint is saved, we save the index of the waypoint in the lineRenderer along with the coordinates of the way point. This way, the lineRenderer coordinates increase to form lines between multiple points.
-      `waypoint_line.SetPosition(current_way_point_location, way_point_array[current_way_point_location]);`
+      `waypoint_line.SetPosition(current_way_point_location,way_point_array[current_way_point_location]);`
 
 **GameManager.cs**
 
@@ -517,9 +527,13 @@ Now you have made all the changes you need and tested it via emulation. Here are
 
 1. Click `File > Build Settings` from the menu bar. Make Sure `Android` is the chosen option in the Platform list. If not, select it.
    A Completely setup build settings should look close to like this
+ 
    ![Build Settings](/Resources/Screenshots/Build%20Settings.png)
+
 2. Click `Player Settings...` on the bottom left. A new window with the name `Project Settings` will pop up as shown.
-   ![](/Resources/Screenshots/Project%20Settings.png)
+
+   ![Project Settings](/Resources/Screenshots/Project%20Settings.png)
+
 3. Set the following details in the window as necessary:
    1. Company Name
    2. Product Name
