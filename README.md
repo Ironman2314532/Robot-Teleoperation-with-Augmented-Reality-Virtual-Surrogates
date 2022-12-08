@@ -131,35 +131,39 @@ _Note: When Launching the project, you might encounter issues like not Editor Ve
 
 ### Import Essential Packages
 
-Click the `Window` button in the menu bar and click on `Package Manager` option. A new window as shown below will pop up.
+1.  Click the `Window` button in the menu bar and click on `Package Manager` option. A new window as shown below will pop up.
+    ![Package Manager](/Resources/Screenshots/Package%20Manager.png)
 
-![Package Manager](/Resources/Screenshots/Package%20Manager.png)
+2.  In the Top Left, you will see the current package registery option as `Packages: In Project`. Click the tab and choose `Unity Registry` to search from the global unity package registry.
 
-In the Top Left, you will see the current package registery option as `Packages: In Project`. Click the tab and choose `Unity Registry` to search from the global unity package registry.
+    1.  **Input System**
+        In the top right search tab, search for `Input System` and press enter. The window will be uploaded as shown below
 
-1. **Input System**
-   In the top right search tab, search for `Input System` and press enter. The window will be uploaded as shown below
-   ![Input Systems](/Resources/Screenshots/Input%20System.png)
+        ![Input Systems](/Resources/Screenshots/Input%20System.png)
 
-   Press `Install` in Bottom-Right to install it and let the installation finish.
+        Press `Install` in Bottom-Right to install it and let the installation finish.
 
-   After the installation of this package is finished, you will recieve a warning box as shown below. This just allows your system to use different versions of input systems.
-   ![Input Systems Confirm](/Resources/Screenshots/Input%20Systems%20Confirmation.png)
-   Press `Yes` to confirm. Let Unity restart and reinitialize the project.
+        After the installation of this package is finished, you will recieve a warning box as shown below. This just allows your system to use different versions of input systems.
 
-2. **AR Foundation**
-   In the top right search tab, search for `AR Foundation` and press enter. The window will be uploaded as shown below
-   ![AR Foundation](/Resources/Screenshots/AR%20Foundation.png)
+        ![Input Systems Confirm](/Resources/Screenshots/Input%20Systems%20Confirmation.png)
 
-   Press `Install` in Bottom-Right to install it and let the installation finish.
+        Press `Yes` to confirm. Let Unity restart and reinitialize the project.
 
-3. **ARCore XR Plugin**
-   In the top right search tab, search for `ARCore XR Plugin` and press enter. The window will be uploaded as shown below
-   ![ARCore XR Plugin](/Resources/Screenshots/ARCore%20XR.png)
+    2.  **AR Foundation**
+        In the top right search tab, search for `AR Foundation` and press enter. The window will be uploaded as shown below
 
-   Press `Install` in Bottom-Right to install it and let the installation finish.
+        ![AR Foundation](/Resources/Screenshots/AR%20Foundation.png)
 
-Close the whole project and restart it again.
+        Press `Install` in Bottom-Right to install it and let the installation finish.
+
+    3.  **ARCore XR Plugin**
+        In the top right search tab, search for `ARCore XR Plugin` and press enter. The window will be uploaded as shown below
+
+              ![ARCore XR Plugin](/Resources/Screenshots/ARCore%20XR.png)
+
+              Press `Install` in Bottom-Right to install it and let the installation finish.
+
+3.  Close the whole project and restart it again.
 
 ### Setup Android Device for App Emulation
 
