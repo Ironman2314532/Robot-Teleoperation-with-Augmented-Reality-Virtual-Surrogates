@@ -1,5 +1,4 @@
-Table of Contents
-
+**Table of Contents**
 <!-- TOC -->
 
 - [Introduction](#introduction)
@@ -8,8 +7,6 @@ Table of Contents
     - [Collect the Softwares to setup the project](#collect-the-softwares-to-setup-the-project)
         - [Collect the Project Files](#collect-the-project-files)
         - [Unity Hub](#unity-hub)
-        - [Android Studio](#android-studio)
-        - [Android NDK](#android-ndk)
         - [Visual Studio Code](#visual-studio-code)
     - [Setup Environment](#setup-environment)
         - [Setup Directories](#setup-directories)
@@ -19,11 +16,9 @@ Table of Contents
         - [Setup Android Device for App Emulation](#setup-android-device-for-app-emulation)
         - [What each scripts contain?](#what-each-scripts-contain)
         - [Export the Android App](#export-the-android-app)
-- [Tools Used](#tools-used)
 - [Designer Details](#designer-details)
 - [Acknowledgements](#acknowledgements)
 - [License](#license)
-- [Documentation TODO](#documentation-todo)
 
 <!-- /TOC -->
 
@@ -66,7 +61,7 @@ _Yes this Handmade thing does not look too professional but I got my new **Samsu
 
 # Interested in Editing the project for your own use?
 
-Here Below is the guide on how you can use the project for your own purposes. The Complete Project sizes more than 5GB, so we are storing most of our project files on a Google Drive from where you can download the files for your use.
+Here Below is the guide on how you can use the project for your own purposes. The Complete Project sizes a lot, so we are storing most of our project files on a Google Drive from where you can download the files for your use.
 
 _Note: The current project is design and built for Unity Editor Version: 2020.3.42f1 - Android Build.
 If you are interested in using any other version of Editor and platform, feel free to do so but take a quick moment to google on how to change editor or platform versions._
@@ -75,7 +70,7 @@ If you are interested in using any other version of Editor and platform, feel fr
 
 ### Collect the Project Files
 
-[Click to Download Project Files](https://drive.google.com/drive/folders/1F6m2Nc7uq7a-VYWZzda4WF9UxTImIZbO?usp=share_link)
+[Click to Download Project Files](https://drive.google.com/file/d/1_Y-TImn0QyTHC3sWtdGCLgOvxjm7Fr0U/view?usp=share_link)
 
 ### Unity Hub
 
@@ -95,24 +90,6 @@ First task for making the project run is to download UnityHub.
    5. `Mac Build Support (Mono)`
 8. Finally Press the `Install` on bottom right and wait for the whole setup to finish.
 9. After the Install, close the Unity Hub.
-
-### Android Studio
-
-1. [Click Link to Download Android Studio](https://developer.android.com/studio/?gclid=CjwKCAiAp7GcBhA0EiwA9U0mtlgnFQGdP97omDMtlMae11TxG08MUOjuRMRrdt3e83YcsLvDqmisWhoCT-UQAvD_BwE&gclsrc=aw.ds)
-2. Install the Android Studio for your device
-3. Launch Android Studio for your device and the following screen will be launched.
-   ![Android Studio Launch Page](/Resources/Screenshots/Android%20Studio%20Launch.png)
-4. Click `More Actions` and select `SDK Manager` from the drop down.
-5. Select the Android Version you want to build your project for. The version should match the Android OS Version for which device you are building the project for.
-6. Click `Apply` and let the Android Studio take care of the rest.
-7. Once the Install is finished, click `Ok` and close the SDK Manager and the Android Studio for now.
-
-### Android NDK
-
-1. [Click Link to Download Android NDK21E](https://dl.google.com/android/repository/android-ndk-r21e-windows-x86_64.zip)
-
-_If you are using some other version of Unity Editor, you can please verify the required version of Android NDK from [here](https://docs.unity3d.com/Manual/android-sdksetup.html) and download it from this [link](https://github.com/android/ndk/wiki/Unsupported-Downloads)._
-2. Extract the Downloaded Folder and Save it in a location you can find later on.
 
 ### Visual Studio Code
 
@@ -151,14 +128,28 @@ Wait for the cloning to Finish and then open the project in VS Code by typing
 
 ```
 cd Robot-Teleoperation-with-Augmented-Reality-Virtual-Surrogates
+mkdir Unity_Files
 code .
 ```
 
-Extract the Project Files that you downloaded while collecting project file into current directory. You current `Robot-Teleoperation-with-Augmented-Reality-Virtual-Surrogates` directory should have the following files when you type `ls` into your terminal:
+Extract the Project Files that you downloaded while collecting project file into current directory. You extracted files will look something like this.
+![](/Resources/Screenshots/Extracted%20Files.png)
+Copy all the files and Folders inside this and paste it into the directory just created by you in `virtual_surrogate_ar_project/Robot-Teleoperation-with-Augmented-Reality-Virtual-Surrogates/Unity_Files`.
+The `Robot-Teleoperation-with-Augmented-Reality-Virtual-Surrogates` directory should have the following files and folders
+
+![Setup Directories](/Resources/Screenshots/Collected%20Folder.png)
+
+You are all set with setting up the directories.
 
 ## Setup Project
 
 ### Launch Project in Unity
+
+1. Press the windows button and search for `Unity Hub`
+2. Once launched, press the `Open` Button on top right. Guide to the `Unity_Files` folder just created and press `Open`.
+3. It will take some time to load and launch the project. Maybe make a coffee meanwhile?
+
+Once the complete setup is done, the following window will be visible.
 
 ![Unity Window](/Resources/Screenshots/Unity%20Launch.png)
 
@@ -236,6 +227,7 @@ _Credits: Youtube - Coco Code_
 ### What each scripts contain?
 
 There are multiple essential scripts in the `Assets/Scripts` folder. The top essential scripts are:
+
 - `ControllerInput.cs` : This script contains all the mapping for the controller Inputs. **_(Note: Never touch this file.)_**
 - `DroneController.cs` : This script contains the primary drone control strategies including what and how each drone will behave and be controlled.
 - `WayPointManager.cs` : This script contains the Waypoint system design. This file is used to log and provide the waypoint data as requested by `DroneController.cs` and `GameManager.cs` scripts.
@@ -243,6 +235,7 @@ There are multiple essential scripts in the `Assets/Scripts` folder. The top ess
 - `Animation/` : This folder contains multiple scripts which manage how the drone should behave for visual asthetics.
 
 **DroneController.cs**
+
 - `public enum DroneState` : This enum variable holds different drone states. This can be referenced both with index number or index value name.
   - `DRONE_STATE_IDLE` : The Drone is powered off
   - `DRONE_STATE_START_TAKINGOFF` : The drone is just powered on and in the instructed to take off.
@@ -265,6 +258,7 @@ There are multiple essential scripts in the `Assets/Scripts` folder. The top ess
 - `public Vector3 GetDroneLocation()` : This function returns the drone location in Vector3 Format.
 
 _Note: `Vector3` data type holds the (x,y,z) coordinate values and can be accessed as follows:_
+
 ```
 Vector3 location = GetDroneLocation();
 float x = location.x;
@@ -273,15 +267,17 @@ float z = location.z;
 ```
 
 **WayPointManager.cs**
+
 - `public static int max_way_points = 10;` : Limits the Maximum Number of WayPoint user can store
 - `public static int current_way_point_location;` : This Variable holds the index of the WayPoint that is being accessed.
 - `public static Vector3[] way_point_array = new Vector3[max_way_points];` : This array stores the location fo all waypoints that are saved.
 - `GameObject way_point_marker_parent;` : This variable holds the address of the Parent GameObject under which the child markers for the sphere are spawned when a way point is saved.
-The variable is updated using:
-`way_point_marker_parent = GameObject.Find("/VisualUI/WayPointManager");`
+  The variable is updated using:
+  `way_point_marker_parent = GameObject.Find("/VisualUI/WayPointManager");`
 - `[SerializeField] TextMeshProUGUI[] way_point_label_array = new TextMeshProUGUI[max_way_points];` : This GameObject holds the array of all the text labels which are updated with the coordinates of waypoint when the waypoint is saved.
 - `public void set_waypoint(Vector3 _position)` : This function saves the waypoint data. This function performs three actions:
   - Create the Marker:
+
     ```
     //Creating Way Point Marker Sphere
     GameObject marker = GameObject.CreatePrimitive(PrimitiveType.Sphere);
@@ -296,23 +292,25 @@ The variable is updated using:
     else
       sphereRenderer.material.SetColor("_Color", new Color32(255, 255, 255, 10));
     ```
+
     Here how's the marker is spawned:
     This creates the sphere on request.
     `GameObject marker = GameObject.CreatePrimitive(PrimitiveType.Sphere);`
-    
+
     Set the size of Sphere to the radius of 0.5m:
     `marker.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);`
-    
+
     Set the sphere as child of the: `way_point_marker_parent`:
     `marker.transform.parent = way_point_marker_parent.transform;`
-    
+
     Set the location of the sphere on the wayPoint location:
     `marker.transform.position = _position;`
-    
+
     Find the color renderer component of the sphere:
     `var sphereRenderer = marker.GetComponent<Renderer>();`
-    
+
     Set the color of the marker as Green for the First Marker, Red for the 10th marker and white for the rest:
+
     ```
     if (current_way_point_location == 0)
       sphereRenderer.material.SetColor("_Color", new Color32(0, 255, 0, 10));
@@ -321,8 +319,8 @@ The variable is updated using:
     else
       sphereRenderer.material.SetColor("_Color", new Color32(255, 255, 255, 10));
     ```
-
   - Create Connecting Lines between Markers:
+
     ```
     //For drawing line between markers
     LineRenderer waypoint_line = GetComponent<LineRenderer>();
@@ -335,15 +333,18 @@ The variable is updated using:
     `LineRenderer waypoint_line = GetComponent<LineRenderer>();`
 
     The LineRenderer Object takes four inputs to plot the line:
+
     - Starting Point Index
     - Starting Point Coordinates
     - Ending Point Index
     - Ending Point Coordinates
-    Everytime when a WayPoint is saved, we save the index of the waypoint in the lineRenderer along with the coordinates of the way point. This way, the lineRenderer coordinates increase to form lines between multiple points.
-    `waypoint_line.SetPosition(current_way_point_location, way_point_array[current_way_point_location]);`
+      Everytime when a WayPoint is saved, we save the index of the waypoint in the lineRenderer along with the coordinates of the way point. This way, the lineRenderer coordinates increase to form lines between multiple points.
+      `waypoint_line.SetPosition(current_way_point_location, way_point_array[current_way_point_location]);`
 
 **GameManager.cs**
+
 - Create Instance of the Scripts for the GamePlay
+
   ```
   public DroneController _PrimaryDrone;
   public DroneController _VirtualSurrogate;
@@ -354,6 +355,7 @@ The variable is updated using:
 - `Vector3 translate_drone;` : Hold the value of Joystick Movement to control the direction and speed of drone.
 - `[SerializeField] public TextMeshProUGUI _ModeSelector;` : Text Label to display the `Virtual Surrogate Control Mode` or `Real Time Control Mode` Tag.
 - `void power_switch_pressed()` : Function switches the power of drone based on the control mode.
+
   ```
   void power_switch_pressed()
     {
@@ -394,8 +396,9 @@ The variable is updated using:
         }
     }
   ```
-- `void save_way_point()` : This Function is called only in Virtual Surrogate Control mode when user presses the button to save waypoint. 
-It Stores the waypoints into the WayPoint Array in the WayPointManager Script.
+- `void save_way_point()` : This Function is called only in Virtual Surrogate Control mode when user presses the button to save waypoint.
+  It Stores the waypoints into the WayPoint Array in the WayPointManager Script.
+
   ```
     void save_way_point()
     {
@@ -412,6 +415,7 @@ It Stores the waypoints into the WayPoint Array in the WayPointManager Script.
     }
   ```
 - `void retrace_way_points()` : Retrace all the way points using the virtual surrogate to determine how the actual drone will behave. Benifical to confirm the behaviour of actual drone before performing the action.
+
   ```
     void retrace_way_points()
     {
@@ -424,6 +428,7 @@ It Stores the waypoints into the WayPoint Array in the WayPointManager Script.
     }
   ```
 - `void execute_way_points()` : Make the Actual Drone retrace all the waypoints. The WayPoints are cleared when the tracking is completed.
+
   ```
     void execute_way_points()
     {
@@ -436,6 +441,7 @@ It Stores the waypoints into the WayPoint Array in the WayPointManager Script.
     }
   ```
 - `void change_mode()` : Change the selection of control between Virtual Surrogate and the Actual Drone.
+
   ```
     void change_mode()
     {
@@ -466,8 +472,8 @@ It Stores the waypoints into the WayPoint Array in the WayPointManager Script.
         }
     }
   ```
-
 - `void Awake()` : Maps all the controller inputs to their specified call back functions.
+
   ```
     void Awake()
     {
@@ -485,8 +491,8 @@ It Stores the waypoints into the WayPoint Array in the WayPointManager Script.
         controls.ModeSelection.ChangeMode.performed += ctx => change_mode();
     }
   ```
-
 - Enable and Disable Control Inputs when in need.
+
   ```
     void OnEnable()
     {
@@ -505,20 +511,27 @@ It Stores the waypoints into the WayPoint Array in the WayPointManager Script.
     }
   ```
 
-
-
-
 ### Export the Android App
 
-# Tools Used
+Now you have made all the changes you need and tested it via emulation. Here are the steps on how to export it to an Android App.
 
-<img width="30px" align="left" alt="C" src="Resources/Logos/C Logo.jpeg">
-<img width="25px" align="left" alt="CPP" src="Resources/Logos/CPP Logo.jpeg">
-<img width="80px" align="left" alt="Git" src="Resources/Logos/Git Logo.jpeg">
-<img width="35px" align="left" alt="GitHub" src="Resources/Logos/GitHub Logo.jpeg">
-<img width="35px" align="left" alt="VS Code" src="Resources/Logos/VS Code.jpeg">
-
-`<br><br>`
+1. Click `File > Build Settings` from the menu bar. Make Sure `Android` is the chosen option in the Platform list. If not, select it.
+   A Completely setup build settings should look close to like this
+   ![Build Settings](/Resources/Screenshots/Build%20Settings.png)
+2. Click `Player Settings...` on the bottom left. A new window with the name `Project Settings` will pop up as shown.
+   ![](/Resources/Screenshots/Project%20Settings.png)
+3. Set the following details in the window as necessary:
+   1. Company Name
+   2. Product Name
+   3. Version Name
+   4. Default Icon
+4. Click the `Other Settings` Drop down. Scroll down to `Identification` Section to set the minimum version of Android your app should support under `Minimum API Level`.
+5. Under `Configuration`, choose `Scripting Backend` as `IL2CPP` and make sure that `ARM64` box is checked.
+6. Close the `Project Settings` window and press `Build` button.
+7. A window will pop up asking you where to build and save the android .apk file. We have chosen `/Resources/Build` directory for our project but you can choose whichever place you feel like is the best for you.
+8. Just sitback and let the build complete. This should take between 1-5 minutes depeneding on your computer performance.
+9. After Build is complete, transfer and install the app to your phone. It might ask you for some permission to install from unknown sources which you'll need to allow.
+10. Connect your controller now and flaunt it to your friends about your new project now.
 
 # Designer Details
 
@@ -554,26 +567,26 @@ _https://www.gnu.org/licenses/gpl-3.0.en.html_
 
 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
 
-# Documentation TODO
+<!-- # Documentation TODO
 
 - [X] Introduction
 - [X] How to run the project
-- [ ] Interested in editing the project for your own use?
-  - [ ] Collect the Softwares to setup the project
+- [X] Interested in editing the project for your own use?
+  - [X] Collect the Softwares to setup the project
     - [X] Collect the Project Files
     - [X] Unity Hub
     - [X] Android Studio
     - [X] Android NDK
     - [X] VS Code
-  - [ ] Setup Environment
-    - [ ] Setup Directories
-  - [ ] Setup Project
-    - [ ] Launch Project in Unity
+  - [X] Setup Environment
+    - [X] Setup Directories
+  - [X] Setup Project
+    - [X] Launch Project in Unity
     - [X] Import Essential Packages
     - [X] Setup Android Device for App Emulation
-    - [ ] What each script contains?
-    - [ ] Export the Android App
-- [ ] Tools Used
+    - [X] What each script contains?
+    - [X] Export the Android App
+- [X] Tools Used
 - [X] Designer Details
-- [ ] Acknowledgements
-- [X] License
+- [X] Acknowledgements
+- [X] License -->
