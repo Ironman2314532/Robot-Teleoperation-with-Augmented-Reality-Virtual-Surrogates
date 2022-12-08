@@ -5,23 +5,24 @@ Table of Contents
 - [Introduction](#introduction)
 - [How to run the project](#how-to-run-the-project)
 - [Interested in Editing the project for your own use?](#interested-in-editing-the-project-for-your-own-use)
-  - [Collect the Softwares to setup the project](#collect-the-softwares-to-setup-the-project)
-    - [Collect the Project Files](#collect-the-project-files)
-    - [Unity Hub](#unity-hub)
-    - [Android Studio](#android-studio)
-    - [Android NDK](#android-ndk)
-    - [Visual Studio Code](#visual-studio-code)
-  - [Let's start with environment setup](#lets-start-with-environment-setup)
-    - [Setup Directories](#setup-directories)
-  - [Setup Project Packages](#setup-project-packages)
-    - [Launch Project in Unity](#launch-project-in-unity)
-    - [Import Essential Packages](#import-essential-packages)
-    - [Setup Android Device for App Emulation](#setup-android-device-for-app-emulation)
-    - [What each scripts contain?](#what-each-scripts-contain)
-    - [Export the Android App](#export-the-android-app)
+    - [Collect the Softwares to setup the project](#collect-the-softwares-to-setup-the-project)
+        - [Collect the Project Files](#collect-the-project-files)
+        - [Unity Hub](#unity-hub)
+        - [Android Studio](#android-studio)
+        - [Android NDK](#android-ndk)
+        - [Visual Studio Code](#visual-studio-code)
+    - [Let's start with environment setup](#lets-start-with-environment-setup)
+        - [Setup Directories](#setup-directories)
+    - [Setup Project Packages](#setup-project-packages)
+        - [Launch Project in Unity](#launch-project-in-unity)
+        - [Import Essential Packages](#import-essential-packages)
+        - [Setup Android Device for App Emulation](#setup-android-device-for-app-emulation)
+        - [What each scripts contain?](#what-each-scripts-contain)
+        - [Export the Android App](#export-the-android-app)
 - [Tools Used](#tools-used)
 - [Designer Details](#designer-details)
-- [References](#references)
+- [Acknowledgements](#acknowledgements)
+- [License](#license)
 
 <!-- /TOC -->
 
@@ -57,6 +58,8 @@ _Super Note: Remember, If anything doesnt work as it is supposed to, just use th
 _Seems Like I am missing something... What am I missing?_
 
 _My Bad, I forgot to show you what each controls on the GamePad does!_
+
+![Controller Instruction](/Resources/Screenshots/Controller%20Guide.png)
 
 # Interested in Editing the project for your own use?
 
@@ -198,12 +201,26 @@ _Note: When Launching the project, you might encounter issues like not Editor Ve
   - [Parth Patel](mailto:parth.pmech@gmail.com)
   - [Thira Patel](mailto:thira.p23@gmail.com)
 
-# References
+# Acknowledgements
 
-- Android App Testing Guide: [Quickly preview your game on Android Device | Unity Tutorial](https://youtu.be/iCXwaehzRFQ)
 - Research Guide: [Robot teleoperation with augmented reality virtual surrogates](https://ieeexplore.ieee.org/abstract/document/8673306)
+- Android App Testing Guide: [Quickly preview your game on Android Device | Unity Tutorial](https://youtu.be/iCXwaehzRFQ)
 - Understanding Augmented Reality in Unity: [Augmented Reality for Everyone - Full Course](https://youtu.be/WzfDo2Wpxks)
 - Configuring Controller in Unity: [CONTROLLER INPUT in Unity!](https://youtu.be/p-3S73MaDP8)
 - WayPoint Tracking Design: [Unity Basics - Waypoint Path system in Unity](https://youtu.be/EwHiMQ3jdHw)
 - Drone Design and Control: [Unity AR foundation tutorial - AR drone for iOS and Android](https://youtu.be/MzFE2QfgohE)
 - And a Super Huge help to [stackoverflow](https://stackoverflow.com/) for existing and making programming possible for us!!
+
+# License
+
+This project is licensed under [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.en.html) (see [LICENSE.md](LICENSE.md)).
+
+Copyright 2022 Parth Patel
+
+Licensed under the GNU General Public License, Version 3.0 (the "License"); you may not use this file except in compliance with the License.
+
+You may obtain a copy of the License at
+
+_https://www.gnu.org/licenses/gpl-3.0.en.html_
+    
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
