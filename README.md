@@ -1,4 +1,5 @@
 **Table of Contents**
+
 <!-- TOC -->
 
 - [Introduction](#introduction)
@@ -46,7 +47,7 @@ _Super Note: Remember, If anything doesnt work as it is supposed to, just use th
 # How to run the project
 
 1. Download the .apk file from the `/Resources/Build/`.
-_(Note: There are two versions of apk available in the folder. One is meant for Arm64 Architecture and another is for Arm7. First try out the Arm64 Architecture, if that fails, go for the Arm7 type)_
+   _(Note: There are two versions of apk available in the folder. One is meant for Arm64 Architecture and another is for Arm7. First try out the Arm64 Architecture, if that fails, go for the Arm7 type)_
 2. Install it on an Android Device with Version 10 or higher.
 3. Provide Camera Access to the app for Augmented Reality usage.
 4. Connect a gamePad Controller to it. You might need a USB Type-A to Type-C or Micro Type-B connector based on your phone.
@@ -71,7 +72,7 @@ If you are interested in using any other version of Editor and platform, feel fr
 
 ### Collect the Project Files
 
-[Click to Download Project Files](https://drive.google.com/file/d/1_Y-TImn0QyTHC3sWtdGCLgOvxjm7Fr0U/view?usp=share_link)
+[Click to Download Project Files](https://drive.google.com/drive/folders/1_Yn5yIZy44mHF5wg112rLlJ0NBaF5pzk?usp=sharing)
 
 ### Unity Hub
 
@@ -163,7 +164,6 @@ _Note: When Launching the project, you might encounter issues like not Editor Ve
 1. Click the `Window` button in the menu bar and click on `Package Manager` option. A new window as shown below will pop up.
 
    ![Package Manager](/Resources/Screenshots/Package%20Manager.png)
-
 2. In the Top Left, you will see the current package registery option as `Packages: In Project`. Click the tab and choose `Unity Registry` to search from the global unity package registry.
 
    1. **Input System**
@@ -300,15 +300,15 @@ float z = location.z;
 
     Here how's the marker is spawned:
     This creates the sphere on request.
-    
+
     `GameObject marker = GameObject.CreatePrimitive(PrimitiveType.Sphere);`
 
     Set the size of Sphere to the radius of 0.5m:
-    
+
     `marker.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);`
 
     Set the sphere as child of the `way_point_marker_parent`:
-    
+
     `marker.transform.parent = way_point_marker_parent.transform;`
 
     Set the location of the sphere on the wayPoint location:
@@ -340,7 +340,7 @@ float z = location.z;
     ```
 
     Finding the Line Renderer Component initiated in `void Start()`
- 
+
     `LineRenderer waypoint_line = GetComponent<LineRenderer>();`
 
     The LineRenderer Object takes four inputs to plot the line:
@@ -528,14 +528,13 @@ Now you have made all the changes you need and tested it via emulation. Here are
 
 1. Click `File > Build Settings` from the menu bar. Make Sure `Android` is the chosen option in the Platform list. If not, select it.
    A Completely setup build settings should look close to like this
- 
-   ![Build Settings](/Resources/Screenshots/Build%20Settings.png)
 
+   ![Build Settings](/Resources/Screenshots/Build%20Settings.png)
 2. Click `Player Settings...` on the bottom left. A new window with the name `Project Settings` will pop up as shown.
 
    ![Project Settings](/Resources/Screenshots/Project%20Settings.png)
-
 3. Set the following details in the window as necessary:
+
    1. Company Name
    2. Product Name
    3. Version Name
