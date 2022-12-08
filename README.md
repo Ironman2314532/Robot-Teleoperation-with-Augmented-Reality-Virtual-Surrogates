@@ -17,6 +17,8 @@ Table of Contents
     - [Launch Project in Unity](#launch-project-in-unity)
     - [Import Essential Packages](#import-essential-packages)
     - [Setup Android Device for App Emulation](#setup-android-device-for-app-emulation)
+    - [What each scripts contain?](#what-each-scripts-contain)
+    - [Export the Android App](#export-the-android-app)
 - [Tools Used](#tools-used)
 - [Designer Details](#designer-details)
 - [References](#references)
@@ -25,7 +27,9 @@ Table of Contents
 
 # Introduction
 
-The aim of the project is to design an Augmented Reality Tool which can make Drone Handling easier by allowing user to focus on high-level control like Motion Planning rather than lower-level tasks like Drone handling.
+The aim of the project is to design a waypoint tracking system with the help of Augmented Reality which can help users to focus more on high-level tasks like motion planning or path planning and less on learning and understanding control dynamics of the drone.
+
+We took the knowledge from the [research paper](https://ieeexplore.ieee.org/abstract/document/8673306) and tried to replicate as close as possible for our learning and understanding. We provide all the project files for general public to use and adapt for their own usage if you find them useful.
 
 We have designed the complete project on [Unity Engine](https://unity.com/) V2020.3.42f1. The project is built for Android Device using [Android Studio](https://developer.android.com/studio/?gclid=CjwKCAiAp7GcBhA0EiwA9U0mtkEpRfebCZN0bh7VVITwbL350F0rY_PM6F03cEG6pZOch3nfhviDmxoCNusQAvD_BwE&gclsrc=aw.ds) at the moment but can easily be build fir any other systems with our How to Guide provided below.
 
@@ -46,8 +50,9 @@ _Super Note: Remember, If anything doesnt work as it is supposed to, just use th
 
 1. Download the .apk file from the repository.
 2. Install it on an Android Device with Version 10 or higher.
-3. Connect a gamePad Controller to it.
-4. You are all set to go !!!
+3. Provide Camera Access to the app for Augmented Reality usage.
+4. Connect a gamePad Controller to it. You might need a USB Type-A to Type-C or Micro Type-B connector based on your phone.
+5. You are all set to go !!!
 
 _Seems Like I am missing something... What am I missing?_
 
@@ -137,6 +142,7 @@ _Note: When Launching the project, you might encounter issues like not Editor Ve
 2.  In the Top Left, you will see the current package registery option as `Packages: In Project`. Click the tab and choose `Unity Registry` to search from the global unity package registry.
 
     1.  **Input System**
+
         In the top right search tab, search for `Input System` and press enter. The window will be uploaded as shown below
 
         ![Input Systems](/Resources/Screenshots/Input%20System.png)
@@ -150,6 +156,7 @@ _Note: When Launching the project, you might encounter issues like not Editor Ve
         Press `Yes` to confirm. Let Unity restart and reinitialize the project.
 
     2.  **AR Foundation**
+
         In the top right search tab, search for `AR Foundation` and press enter. The window will be uploaded as shown below
 
         ![AR Foundation](/Resources/Screenshots/AR%20Foundation.png)
@@ -157,15 +164,20 @@ _Note: When Launching the project, you might encounter issues like not Editor Ve
         Press `Install` in Bottom-Right to install it and let the installation finish.
 
     3.  **ARCore XR Plugin**
+
         In the top right search tab, search for `ARCore XR Plugin` and press enter. The window will be uploaded as shown below
 
-              ![ARCore XR Plugin](/Resources/Screenshots/ARCore%20XR.png)
+        ![ARCore XR Plugin](/Resources/Screenshots/ARCore%20XR.png)
 
-              Press `Install` in Bottom-Right to install it and let the installation finish.
+        Press `Install` in Bottom-Right to install it and let the installation finish.
 
 3.  Close the whole project and restart it again.
 
 ### Setup Android Device for App Emulation
+
+### What each scripts contain?
+
+### Export the Android App
 
 # Tools Used
 
