@@ -5,24 +5,25 @@ Table of Contents
 - [Introduction](#introduction)
 - [How to run the project](#how-to-run-the-project)
 - [Interested in Editing the project for your own use?](#interested-in-editing-the-project-for-your-own-use)
-    - [Collect the Softwares to setup the project](#collect-the-softwares-to-setup-the-project)
-        - [Collect the Project Files](#collect-the-project-files)
-        - [Unity Hub](#unity-hub)
-        - [Android Studio](#android-studio)
-        - [Android NDK](#android-ndk)
-        - [Visual Studio Code](#visual-studio-code)
-    - [Let's start with environment setup](#lets-start-with-environment-setup)
-        - [Setup Directories](#setup-directories)
-    - [Setup Project Packages](#setup-project-packages)
-        - [Launch Project in Unity](#launch-project-in-unity)
-        - [Import Essential Packages](#import-essential-packages)
-        - [Setup Android Device for App Emulation](#setup-android-device-for-app-emulation)
-        - [What each scripts contain?](#what-each-scripts-contain)
-        - [Export the Android App](#export-the-android-app)
+  - [Collect the Softwares to setup the project](#collect-the-softwares-to-setup-the-project)
+    - [Collect the Project Files](#collect-the-project-files)
+    - [Unity Hub](#unity-hub)
+    - [Android Studio](#android-studio)
+    - [Android NDK](#android-ndk)
+    - [Visual Studio Code](#visual-studio-code)
+  - [Setup Environment](#setup-environment)
+    - [Setup Directories](#setup-directories)
+  - [Setup Project](#setup-project)
+    - [Launch Project in Unity](#launch-project-in-unity)
+    - [Import Essential Packages](#import-essential-packages)
+    - [Setup Android Device for App Emulation](#setup-android-device-for-app-emulation)
+    - [What each scripts contain?](#what-each-scripts-contain)
+    - [Export the Android App](#export-the-android-app)
 - [Tools Used](#tools-used)
 - [Designer Details](#designer-details)
 - [Acknowledgements](#acknowledgements)
 - [License](#license)
+- [Documentation TODO](#documentation-todo)
 
 <!-- /TOC -->
 
@@ -49,7 +50,7 @@ _Super Note: Remember, If anything doesnt work as it is supposed to, just use th
 
 # How to run the project
 
-1. Download the .apk file from the repository.
+1. Download the .apk file from the `/Resources/Build/`.
 2. Install it on an Android Device with Version 10 or higher.
 3. Provide Camera Access to the app for Augmented Reality usage.
 4. Connect a gamePad Controller to it. You might need a USB Type-A to Type-C or Micro Type-B connector based on your phone.
@@ -60,6 +61,8 @@ _Seems Like I am missing something... What am I missing?_
 _My Bad, I forgot to show you what each controls on the GamePad does!_
 
 ![Controller Instruction](/Resources/Screenshots/Controller%20Guide.png)
+
+_Yes this Handmade thing does not look too professional but I got my new **Samsung Galaxy Tab S8 Ultra** So I am flaunting it and not hiding the fact that I was too lazy to make the guide in a professional software like Adobe Illustrator_
 
 # Interested in Editing the project for your own use?
 
@@ -91,19 +94,43 @@ First task for making the project run is to download UnityHub.
    4. `Linux Build Support`
    5. `Mac Build Support (Mono)`
 8. Finally Press the `Install` on bottom right and wait for the whole setup to finish.
+9. After the Install, close the Unity Hub.
 
 ### Android Studio
 
 1. [Click Link to Download Android Studio](https://developer.android.com/studio/?gclid=CjwKCAiAp7GcBhA0EiwA9U0mtlgnFQGdP97omDMtlMae11TxG08MUOjuRMRrdt3e83YcsLvDqmisWhoCT-UQAvD_BwE&gclsrc=aw.ds)
 2. Install the Android Studio for your device
+3. Launch Android Studio for your device and the following screen will be launched.
+   ![Android Studio Launch Page](/Resources/Screenshots/Android%20Studio%20Launch.png)
+4. Click `More Actions` and select `SDK Manager` from the drop down.
+5. Select the Android Version you want to build your project for. The version should match the Android OS Version for which device you are building the project for.
+6. Click `Apply` and let the Android Studio take care of the rest.
+7. Once the Install is finished, click `Ok` and close the SDK Manager and the Android Studio for now.
 
 ### Android NDK
+
+1. [Click Link to Download Android NDK21E](https://dl.google.com/android/repository/android-ndk-r21e-windows-x86_64.zip)
+
+_If you are using some other version of Unity Editor, you can please verify the required version of Android NDK from [here](https://docs.unity3d.com/Manual/android-sdksetup.html) and download it from this [link](https://github.com/android/ndk/wiki/Unsupported-Downloads)._
+2. Extract the Downloaded Folder and Save it in a location you can find later on.
 
 ### Visual Studio Code
 
 Yes, I know. You can use any other IDE that you may like but I love VS Code. _So deal with it!!_
 
-## Let's start with environment setup
+1. Download VS Code by clicking the [link](https://code.visualstudio.com/).
+2. Install VS Code. Once the Installation is complete, launch it.
+3. Click the Extensions tab and install the following extensions by clicking these links
+
+   1. [Better Comments](https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments)
+   2. [C#](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp)
+   3. [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+   4. [VSC-Essentials](https://marketplace.visualstudio.com/items?itemName=Gydunhn.vsc-essentials)
+   5. [Prettier ESLint](https://marketplace.visualstudio.com/items?itemName=rvest.vs-code-prettier-eslint)
+
+   _(Note: This Extensions are not neccesary but will surely make your life a bit easier when you are on the verge of unaliving yourself for picking up a project like this!!! Believe me... you are reading this ReadMe just due to their help!!)_
+
+## Setup Environment
 
 ### Setup Directories
 
@@ -129,7 +156,7 @@ code .
 
 Extract the Project Files that you downloaded while collecting project file into current directory. You current `Robot-Teleoperation-with-Augmented-Reality-Virtual-Surrogates` directory should have the following files when you type `ls` into your terminal:
 
-## Setup Project Packages
+## Setup Project
 
 ### Launch Project in Unity
 
@@ -139,44 +166,72 @@ _Note: When Launching the project, you might encounter issues like not Editor Ve
 
 ### Import Essential Packages
 
-1.  Click the `Window` button in the menu bar and click on `Package Manager` option. A new window as shown below will pop up.
-    ![Package Manager](/Resources/Screenshots/Package%20Manager.png)
+1. Click the `Window` button in the menu bar and click on `Package Manager` option. A new window as shown below will pop up.
+   ![Package Manager](/Resources/Screenshots/Package%20Manager.png)
+2. In the Top Left, you will see the current package registery option as `Packages: In Project`. Click the tab and choose `Unity Registry` to search from the global unity package registry.
 
-2.  In the Top Left, you will see the current package registery option as `Packages: In Project`. Click the tab and choose `Unity Registry` to search from the global unity package registry.
+   1. **Input System**
 
-    1.  **Input System**
+      In the top right search tab, search for `Input System` and press enter. The window will be uploaded as shown below
 
-        In the top right search tab, search for `Input System` and press enter. The window will be uploaded as shown below
+      ![Input Systems](/Resources/Screenshots/Input%20System.png)
 
-        ![Input Systems](/Resources/Screenshots/Input%20System.png)
+      Press `Install` in Bottom-Right to install it and let the installation finish.
 
-        Press `Install` in Bottom-Right to install it and let the installation finish.
+      After the installation of this package is finished, you will recieve a warning box as shown below. This just allows your system to use different versions of input systems.
 
-        After the installation of this package is finished, you will recieve a warning box as shown below. This just allows your system to use different versions of input systems.
+      ![Input Systems Confirm](/Resources/Screenshots/Input%20Systems%20Confirmation.png)
 
-        ![Input Systems Confirm](/Resources/Screenshots/Input%20Systems%20Confirmation.png)
+      Press `Yes` to confirm. Let Unity restart and reinitialize the project.
+   2. **AR Foundation**
 
-        Press `Yes` to confirm. Let Unity restart and reinitialize the project.
+      In the top right search tab, search for `AR Foundation` and press enter. The window will be uploaded as shown below
 
-    2.  **AR Foundation**
+      ![AR Foundation](/Resources/Screenshots/AR%20Foundation.png)
 
-        In the top right search tab, search for `AR Foundation` and press enter. The window will be uploaded as shown below
+      Press `Install` in Bottom-Right to install it and let the installation finish.
+   3. **ARCore XR Plugin**
 
-        ![AR Foundation](/Resources/Screenshots/AR%20Foundation.png)
+      In the top right search tab, search for `ARCore XR Plugin` and press enter. The window will be uploaded as shown below
 
-        Press `Install` in Bottom-Right to install it and let the installation finish.
+      ![ARCore XR Plugin](/Resources/Screenshots/ARCore%20XR.png)
 
-    3.  **ARCore XR Plugin**
-
-        In the top right search tab, search for `ARCore XR Plugin` and press enter. The window will be uploaded as shown below
-
-        ![ARCore XR Plugin](/Resources/Screenshots/ARCore%20XR.png)
-
-        Press `Install` in Bottom-Right to install it and let the installation finish.
-
-3.  Close the whole project and restart it again.
+      Press `Install` in Bottom-Right to install it and let the installation finish.
+3. Close the whole project and restart it again. You are all set for editing the project.
 
 ### Setup Android Device for App Emulation
+
+This step of the setup is not essential in building project but we do this often because during development, there might happen that your code might have bugs. If each and every time when trying out a new feature, you export project as .apk and install it in the android device, it will take a lot of time and hassle. This setup will help you mirror you unity app directly on your android device without the need to install the app after every change and make the process of updating the designs a bit more hassle free.
+
+1. Connect the phone to your laptop with USB Cable. There is option to build the emulation wirelessly but I prefer wired method for better speed and response.
+2. Download and Install [Unity Remote 5](https://play.google.com/store/apps/details?id=com.unity3d.mobileremote&hl=en_US&gl=US) from Google Play Store.
+3. Turn ON `Developer Settings` for your Android Device. _(You might need to google on how to turn it on for your specific device.)_
+4. After Turning On `Developer Settings`, open the Developer Settings tab in your android device settings and turn on `USB Debugging`.
+
+   Setup from the Android Side is complete, now switch to Unity on your computer for the remaining setup.
+5. Click on `Edit > Project Settings` in the Menu Bar. A Project Settings window as shown will pop-up.
+
+   ![Project Manager](/Resources/Screenshots/Project%20Manager.png)
+6. Click on `Editor` tab on the Left Panel. The Window will be updated as shown
+
+   ![Project Manager - Editor](/Resources/Screenshots/Project%20Settings%20Editor.png)
+7. Set the settings as follows:
+
+   1. Set `Device` dropdown, select `Any Android Device`.
+   2. Set `Compression` dropdown, select `JPEG`.
+   3. Set `Resolution` dropdown, select `Normal`.
+8. Close the `Project Settings` tab. We are all done.
+9. Press the `Play` Button and you can see the Unity Game window replicate on your Android Device.
+
+Congratulations, we are all ready for emulation !!
+
+You can click the video below if you prefer the video guide on how to setup the Android Emulation.
+
+<a href="https://youtu.be/iCXwaehzRFQ">
+  <img src="Resources/Screenshots/Android Emulator Image.jpg" width="480" />
+</a>
+
+_Credits: Youtube - Coco Code_
 
 ### What each scripts contain?
 
@@ -190,7 +245,7 @@ _Note: When Launching the project, you might encounter issues like not Editor Ve
 <img width="35px" align="left" alt="GitHub" src="Resources/Logos/GitHub Logo.jpeg">
 <img width="35px" align="left" alt="VS Code" src="Resources/Logos/VS Code.jpeg">
 
-<br><br>
+`<br><br>`
 
 # Designer Details
 
@@ -205,6 +260,7 @@ _Note: When Launching the project, you might encounter issues like not Editor Ve
 
 - Research Guide: [Robot teleoperation with augmented reality virtual surrogates](https://ieeexplore.ieee.org/abstract/document/8673306)
 - Android App Testing Guide: [Quickly preview your game on Android Device | Unity Tutorial](https://youtu.be/iCXwaehzRFQ)
+- Export Unity Project to Android: [How to Export your game in Unity for Android](https://youtu.be/fbcJjZInt-A)
 - Understanding Augmented Reality in Unity: [Augmented Reality for Everyone - Full Course](https://youtu.be/WzfDo2Wpxks)
 - Configuring Controller in Unity: [CONTROLLER INPUT in Unity!](https://youtu.be/p-3S73MaDP8)
 - WayPoint Tracking Design: [Unity Basics - Waypoint Path system in Unity](https://youtu.be/EwHiMQ3jdHw)
@@ -222,5 +278,29 @@ Licensed under the GNU General Public License, Version 3.0 (the "License"); you 
 You may obtain a copy of the License at
 
 _https://www.gnu.org/licenses/gpl-3.0.en.html_
-    
+
 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+
+# Documentation TODO
+
+- [X] Introduction
+- [X] How to run the project
+- [ ] Interested in editing the project for your own use?
+  - [ ] Collect the Softwares to setup the project
+    - [X] Collect the Project Files
+    - [X] Unity Hub
+    - [X] Android Studio
+    - [X] Android NDK
+    - [X] VS Code
+  - [ ] Setup Environment
+    - [ ] Setup Directories
+  - [ ] Setup Project
+    - [ ] Launch Project in Unity
+    - [X] Import Essential Packages
+    - [X] Setup Android Device for App Emulation
+    - [ ] What each script contains?
+    - [ ] Export the Android App
+- [ ] Tools Used
+- [X] Designer Details
+- [ ] Acknowledgements
+- [X] License
