@@ -5,7 +5,7 @@ Table of Contents
 - [Introduction](#introduction)
 - [How to run the project](#how-to-run-the-project)
 - [Interested in Editing the project for your own use?](#interested-in-editing-the-project-for-your-own-use)
-  - [Collect the Essentials to setup the project](#collect-the-essentials-to-setup-the-project)
+  - [Collect the Softwares to setup the project](#collect-the-softwares-to-setup-the-project)
     - [Collect the Project Files](#collect-the-project-files)
     - [Unity Hub](#unity-hub)
     - [Android Studio](#android-studio)
@@ -13,6 +13,10 @@ Table of Contents
     - [Visual Studio Code](#visual-studio-code)
   - [Let's start with environment setup](#lets-start-with-environment-setup)
     - [Setup Directories](#setup-directories)
+  - [Setup Project Packages](#setup-project-packages)
+    - [Launch Project in Unity](#launch-project-in-unity)
+    - [Import Essential Packages](#import-essential-packages)
+    - [Setup Android Device for App Emulation](#setup-android-device-for-app-emulation)
 - [Tools Used](#tools-used)
 - [Designer Details](#designer-details)
 - [References](#references)
@@ -56,7 +60,7 @@ Here Below is the guide on how you can use the project for your own purposes. Th
 _Note: The current project is design and built for Unity Editor Version: 2020.3.42f1 - Android Build.
 If you are interested in using any other version of Editor and platform, feel free to do so but take a quick moment to google on how to change editor or platform versions._
 
-## Collect the Essentials to setup the project
+## Collect the Softwares to setup the project
 
 ### Collect the Project Files
 
@@ -117,7 +121,47 @@ code .
 
 Extract the Project Files that you downloaded while collecting project file into current directory. You current `Robot-Teleoperation-with-Augmented-Reality-Virtual-Surrogates` directory should have the following files when you type `ls` into your terminal:
 
-<br>
+## Setup Project Packages
+
+### Launch Project in Unity
+
+![Unity Window](/Resources/Screenshots/Unity%20Launch.png)
+
+_Note: When Launching the project, you might encounter issues like not Editor Version not matching, or missing packages. Don't worry, push through it and just launch the project. We'll sort the issues soon._
+
+### Import Essential Packages
+
+Click the `Window` button in the menu bar and click on `Package Manager` option. A new window as shown below will pop up.
+
+![Package Manager](/Resources/Screenshots/Package%20Manager.png)
+
+In the Top Left, you will see the current package registery option as `Packages: In Project`. Click the tab and choose `Unity Registry` to search from the global unity package registry.
+
+1. **Input System**
+   In the top right search tab, search for `Input System` and press enter. The window will be uploaded as shown below
+   ![Input Systems](/Resources/Screenshots/Input%20System.png)
+
+   Press `Install` in Bottom-Right to install it and let the installation finish.
+
+   After the installation of this package is finished, you will recieve a warning box as shown below. This just allows your system to use different versions of input systems.
+   ![Input Systems Confirm](/Resources/Screenshots/Input%20Systems%20Confirmation.png)
+   Press `Yes` to confirm. Let Unity restart and reinitialize the project.
+
+2. **AR Foundation**
+   In the top right search tab, search for `AR Foundation` and press enter. The window will be uploaded as shown below
+   ![AR Foundation](/Resources/Screenshots/AR%20Foundation.png)
+
+   Press `Install` in Bottom-Right to install it and let the installation finish.
+
+3. **ARCore XR Plugin**
+   In the top right search tab, search for `ARCore XR Plugin` and press enter. The window will be uploaded as shown below
+   ![ARCore XR Plugin](/Resources/Screenshots/ARCore%20XR.png)
+
+   Press `Install` in Bottom-Right to install it and let the installation finish.
+
+Close the whole project and restart it again.
+
+### Setup Android Device for App Emulation
 
 # Tools Used
 
