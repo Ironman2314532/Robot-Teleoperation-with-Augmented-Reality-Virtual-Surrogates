@@ -29,7 +29,7 @@ The aim of the project is to design a waypoint tracking system with the help of 
 
 We took the knowledge from the [research paper](https://ieeexplore.ieee.org/abstract/document/8673306) and tried to replicate as close as possible for our learning and understanding. We provide all the project files for general public to use and adapt for their own usage if you find them useful.
 
-We have designed the complete project on [Unity Engine](https://unity.com/) V2020.3.42f1. The project is built for Android Device using [Android Studio](https://developer.android.com/studio/?gclid=CjwKCAiAp7GcBhA0EiwA9U0mtkEpRfebCZN0bh7VVITwbL350F0rY_PM6F03cEG6pZOch3nfhviDmxoCNusQAvD_BwE&gclsrc=aw.ds) at the moment but can easily be build fir any other systems with our How to Guide provided below.
+We have designed the complete project on [Unity Engine](https://unity.com/) _V2020.3.42f1_. The project is built for Android Device using [Android Studio](https://developer.android.com/studio/?gclid=CjwKCAiAp7GcBhA0EiwA9U0mtkEpRfebCZN0bh7VVITwbL350F0rY_PM6F03cEG6pZOch3nfhviDmxoCNusQAvD_BwE&gclsrc=aw.ds) at the moment but can easily be build fir any other systems with our How to Guide provided below.
 
 We were heavily inspired and took deep notes on the project from the Research paper published by:
 
@@ -40,9 +40,8 @@ We were heavily inspired and took deep notes on the project from the Research pa
 Citation:
 [Walker, M.E., Hedayati, H. and Szafir, D., 2019, March. Robot teleoperation with augmented reality virtual surrogates. In 2019 14th ACM/IEEE International Conference on Human-Robot Interaction (HRI) (pp. 202-210). IEEE.](https://ieeexplore.ieee.org/abstract/document/8673306)
 
-_Note: This project is designed on Windows 11 and built for Android V11/12 not tested on any other platforms_
-
-_Super Note: Remember, If anything doesnt work as it is supposed to, just use the rules of IT. Close it and restart it again :)_
+🗒 _Note: This project is designed on Windows 11 and built for Android V11/12 not tested on any other platforms._\
+📓 _Super Note: Remember, If anything doesnt work as it is supposed to, just use the rules of IT. Close it and restart it again._ 😆
 
 # How to run the project
 
@@ -53,13 +52,12 @@ _Super Note: Remember, If anything doesnt work as it is supposed to, just use th
 4. Connect a gamePad Controller to it. You might need a USB Type-A to Type-C or Micro Type-B connector based on your phone.
 5. You are all set to go !!!
 
-_Seems Like I am missing something... What am I missing?_
-
-_My Bad, I forgot to show you what each controls on the GamePad does!_
+🤔 _Seems Like I am missing something... What am I missing?_\
+😅 _My Bad, I forgot to show you what each controls on the GamePad does!_
 
 ![Controller Instruction](/Resources/Screenshots/Controller%20Guide.png)
 
-_Yes this Handmade thing does not look too professional but I got my new **Samsung Galaxy Tab S8 Ultra** So I am flaunting it and not hiding the fact that I was too lazy to make the guide in a professional software like Adobe Illustrator_
+_Yes this Handmade thing does not look too professional but I got my new **Samsung Galaxy Tab S8 Ultra** So I am flaunting it and not hiding the fact that I was too lazy to make the guide in a professional software like Adobe Illustrator_ 
 
 # Interested in Editing the project for your own use?
 
@@ -107,7 +105,7 @@ Yes, I know. You can use any other IDE that you may like but I love VS Code. _So
    4. [VSC-Essentials](https://marketplace.visualstudio.com/items?itemName=Gydunhn.vsc-essentials)
    5. [Prettier ESLint](https://marketplace.visualstudio.com/items?itemName=rvest.vs-code-prettier-eslint)
 
-   _(Note: This Extensions are not neccesary but will surely make your life a bit easier when you are on the verge of unaliving yourself for picking up a project like this!!! Believe me... you are reading this ReadMe just due to their help!!)_
+   _(Note: This Extensions are not neccesary but will surely make your life a bit easier when you are on the verge of unaliving yourself for picking up a project like this!!! Believe me... you are reading this ReadMe just due to their help!!)_ 👼
 
 ## Setup Environment
 
@@ -115,20 +113,20 @@ Yes, I know. You can use any other IDE that you may like but I love VS Code. _So
 
 Go to the Desktop and Right Click to Open new Terminal. Type the Following Command inside it
 
-```
+```bash
 mkdir virtual_surrogate_ar_project
 cd virtual_surrogate_ar_project
 ```
 
 Clone the GitHub Repository here with by typing the following in terminal
 
-```
+```bash
 git clone https://github.com/parth-20-07/Robot-Teleoperation-with-Augmented-Reality-Virtual-Surrogates
 ```
 
 Wait for the cloning to Finish and then open the project in VS Code by typing
 
-```
+```bash
 cd Robot-Teleoperation-with-Augmented-Reality-Virtual-Surrogates
 mkdir Unity_Files
 code .
@@ -264,7 +262,7 @@ There are multiple essential scripts in the `Assets/Scripts` folder. The top ess
 
 _Note: `Vector3` data type holds the (x,y,z) coordinate values and can be accessed as follows:_
 
-```
+```cs
 Vector3 location = GetDroneLocation();
 float x = location.x;
 float y = location.y;
@@ -283,7 +281,7 @@ float z = location.z;
 - `public void set_waypoint(Vector3 _position)` : This function saves the waypoint data. This function performs three actions:
   - Create the Marker:
 
-    ```
+    ```cs
     //Creating Way Point Marker Sphere
     GameObject marker = GameObject.CreatePrimitive(PrimitiveType.Sphere);
     marker.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
@@ -321,7 +319,7 @@ float z = location.z;
 
     Set the color of the marker as Green for the First Marker, Red for the 10th marker and white for the rest:
 
-    ```
+    ```cs
     if (current_way_point_location == 0)
       sphereRenderer.material.SetColor("_Color", new Color32(0, 255, 0, 10));
     else if (current_way_point_location == max_way_points - 1)
@@ -331,7 +329,7 @@ float z = location.z;
     ```
   - Create Connecting Lines between Markers:
 
-    ```
+    ```cs
     //For drawing line between markers
     LineRenderer waypoint_line = GetComponent<LineRenderer>();
     waypoint_line.positionCount = current_way_point_location + 1;
@@ -356,7 +354,7 @@ float z = location.z;
 
 - Create Instance of the Scripts for the GamePlay
 
-  ```
+  ```cs
   public DroneController _PrimaryDrone;
   public DroneController _VirtualSurrogate;
   public WayPointManager WayPointManager;
@@ -367,7 +365,7 @@ float z = location.z;
 - `[SerializeField] public TextMeshProUGUI _ModeSelector;` : Text Label to display the `Virtual Surrogate Control Mode` or `Real Time Control Mode` Tag.
 - `void power_switch_pressed()` : Function switches the power of drone based on the control mode.
 
-  ```
+  ```cs
   void power_switch_pressed()
     {
         if (!_virtual_surrogate_control_mode)
@@ -410,7 +408,7 @@ float z = location.z;
 - `void save_way_point()` : This Function is called only in Virtual Surrogate Control mode when user presses the button to save waypoint.
   It Stores the waypoints into the WayPoint Array in the WayPointManager Script.
 
-  ```
+  ```cs
     void save_way_point()
     {
         if (_virtual_surrogate_control_mode)
@@ -427,7 +425,7 @@ float z = location.z;
   ```
 - `void retrace_way_points()` : Retrace all the way points using the virtual surrogate to determine how the actual drone will behave. Benifical to confirm the behaviour of actual drone before performing the action.
 
-  ```
+  ```cs
     void retrace_way_points()
     {
         if (_virtual_surrogate_control_mode)
@@ -440,7 +438,7 @@ float z = location.z;
   ```
 - `void execute_way_points()` : Make the Actual Drone retrace all the waypoints. The WayPoints are cleared when the tracking is completed.
 
-  ```
+  ```cs
     void execute_way_points()
     {
         if (_virtual_surrogate_control_mode)
@@ -453,7 +451,7 @@ float z = location.z;
   ```
 - `void change_mode()` : Change the selection of control between Virtual Surrogate and the Actual Drone.
 
-  ```
+  ```cs
     void change_mode()
     {
         _virtual_surrogate_control_mode = !_virtual_surrogate_control_mode;
@@ -485,7 +483,7 @@ float z = location.z;
   ```
 - `void Awake()` : Maps all the controller inputs to their specified call back functions.
 
-  ```
+  ```cs
     void Awake()
     {
         controls = new ControllerInput();
@@ -504,7 +502,7 @@ float z = location.z;
   ```
 - Enable and Disable Control Inputs when in need.
 
-  ```
+  ```cs
     void OnEnable()
     {
         controls.Power.Enable();
@@ -580,27 +578,3 @@ You may obtain a copy of the License at
 _https://www.gnu.org/licenses/gpl-3.0.en.html_
 
 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
-
-<!-- # Documentation TODO
-
-- [X] Introduction
-- [X] How to run the project
-- [X] Interested in editing the project for your own use?
-  - [X] Collect the Softwares to setup the project
-    - [X] Collect the Project Files
-    - [X] Unity Hub
-    - [X] Android Studio
-    - [X] Android NDK
-    - [X] VS Code
-  - [X] Setup Environment
-    - [X] Setup Directories
-  - [X] Setup Project
-    - [X] Launch Project in Unity
-    - [X] Import Essential Packages
-    - [X] Setup Android Device for App Emulation
-    - [X] What each script contains?
-    - [X] Export the Android App
-- [X] Tools Used
-- [X] Designer Details
-- [X] Acknowledgements
-- [X] License -->
